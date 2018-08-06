@@ -1,0 +1,294 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_OCTREE_EXAMPLE      ICON                    "Rt3d.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "Load Obj",                    ID_FILE_LOADMESH
+        MENUITEM "Save Obj",                    ID_FILE_SAVEOBJ
+        MENUITEM SEPARATOR
+        MENUITEM "Export Vrml",                 ID_FILE_SAVEVRML
+        MENUITEM SEPARATOR
+        MENUITEM "Hold",                        ID_FILE_HOLD
+        MENUITEM "Fetch",                       ID_FILE_FETCH
+        MENUITEM SEPARATOR
+        MENUITEM "Exit",                        ID_FILE_EXIT
+    END
+    POPUP "View"
+    BEGIN
+        MENUITEM "Turn ON/OFF Light",           ID_ACTION_TURNON
+        MENUITEM "Enable/Disable Silhuette View", ID_VIEW_ENABLE
+        MENUITEM "Change Silhuette View",       ID_VIEW_CHANGESILHUETTEVIEW
+        MENUITEM SEPARATOR
+        MENUITEM "Draw Vector Field ON/OFF",    ID_VIEW_DRAWVECTORFIELD
+        MENUITEM "Draw Internal Force ON/OFF",  ID_VIEW_DRAWINTERNALFORCE
+        MENUITEM "Draw External Force ON/OFF",  ID_VIEW_DRAWEXTERNALFORCE
+        MENUITEM "Draw Silhuette Force ON/OFF", ID_VIEW_DRAWSILHUETTEFORCE
+        MENUITEM "Draw Shadow Force ON/OFF",    ID_VIEW_DRAWSHADOWFORCEON
+        MENUITEM "Draw Disparity Map ON/OFF",   ID_VIEW_DRAWDISPARITYMAP
+        MENUITEM "Draw OcTree Box ON/OFF",      ID_VIEW_DRAWOCTREEBOX
+        MENUITEM SEPARATOR
+        MENUITEM "None Model",                  ID_VIEW_NONEMODEL
+        MENUITEM "Flat Model",                  ID_VIEW_FLATMODEL
+        MENUITEM "Smooth Model",                ID_VIEW_SMOOTHMODEL
+        MENUITEM "Wireframe Model",             ID_VIEW_WIREFRAMEMODEL
+        MENUITEM SEPARATOR
+        MENUITEM "Laplacian Analysis",          ID_VIEW_CURVATURECOLOR
+        MENUITEM "Biharmonic Analysis",         ID_VIEW_CURVATUREVARIATIONANALYSIS
+
+        MENUITEM "Mean Curvature Analysis",     ID_VIEW_MEANCURVATUREANALYSIS
+
+        MENUITEM "Area Analysis",               ID_VIEW_AREAANALYSIS
+        MENUITEM SEPARATOR
+        MENUITEM "Show Mesh Parameter",         ID_SHOWPAR
+    END
+    POPUP "Action"
+    BEGIN
+        MENUITEM "Evolve",                      ID_ACTION_EVOLVE
+        MENUITEM "Get Back by one evolution",   ID_ACTION_GETBACKBYONEEVOLUTION
+
+        MENUITEM "Refresh All Forces",          ID_ACTION_RECALCULATEALLFORCES
+
+        MENUITEM "Evolve without recalculate Silhouette Force", 
+                                                ID_ACTION_EVOLVEWITHOUTRECALCULATESILHOUETTEFORCE
+
+        MENUITEM SEPARATOR
+        MENUITEM "Try to correct Mesh Structure", 
+                                                ID_ACTION_TRYTOCORRECTMESHSTRUCTURE
+
+        MENUITEM "Remove zero edged faces",     ID_ACTION_REMOVEZEROEDGEDFACES
+
+        MENUITEM "Simplify",                    ID_ACTION_SIMPLIFY
+        MENUITEM "Optimize",                    ID_ACTION_REMESH
+        MENUITEM "Subdivision by area (Add resolution) ", 
+                                                ID_ACTION_ADDMESHRESOLUTION
+        MENUITEM "Subdivision by curvature (Add resolution) ", 
+                                                ID_ACTION_SUBDIVISIONBYCURVATURE
+
+        MENUITEM SEPARATOR
+        MENUITEM "Save Model -> Out",           ID_ACTION_SAVEMODEL
+    END
+    POPUP "Tools"
+    BEGIN
+        MENUITEM "Mesh compare",                ID_TOOLS_MESHCOMPARE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "Tasti",                       ID_HELP_TASTO
+    END
+    POPUP "Edema"
+    BEGIN
+        MENUITEM "Find center",                 ID_EDEMA_FINDCENTER
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACC ACCELERATORS 
+BEGIN
+    VK_LEFT,        ID_ALEFT,               VIRTKEY, NOINVERT
+    VK_RIGHT,       ID_ARIGHT,              VIRTKEY, NOINVERT
+    VK_RETURN,      ID_ENTER,               VIRTKEY, NOINVERT
+    VK_SPACE,       ID_SPACE,               VIRTKEY, NOINVERT
+    "/",            IDM_ABOUT,              ASCII,  ALT, NOINVERT
+    "?",            IDM_ABOUT,              ASCII,  ALT, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 22, 17, 323, 225
+STYLE DS_SETFONT | DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "About"
+FONT 8, "Arial", 400, 0, 0x0
+BEGIN
+    ICON            IDI_OCTREE_EXAMPLE,IDC_MYICON,14,9,20,20
+    LTEXT           "DataFusion",IDC_STATIC,49,10,119,8,SS_NOPREFIX
+    DEFPUSHBUTTON   "OK",IDOK,246,6,66,12,WS_GROUP
+    LTEXT           "written by Ballan Luca 2005",IDC_STATIC,49,21,119,8,
+                    SS_NOPREFIX
+    LTEXT           """3"" - Draw Internal Force",IDC_STATIC,24,77,119,8,
+                    SS_NOPREFIX
+    LTEXT           """2"" - Draw FilledMesh, WireframeMesh, LaplaciansIntensity, BiharmonicIntensity, AreaIntensity, SmoothMesh, MeanCurvatureIntensity, NONE",
+                    IDC_STATIC,24,60,271,18,SS_NOPREFIX
+    LTEXT           """4"" - Draw DisparityMap Force",IDC_STATIC,24,85,119,8,
+                    SS_NOPREFIX
+    LTEXT           """5"" - Draw Silhuouette Force",IDC_STATIC,24,94,119,8,
+                    SS_NOPREFIX
+    LTEXT           """6"" - Draw Disparity Map",IDC_STATIC,24,104,119,8,
+                    SS_NOPREFIX
+    LTEXT           """8"" - Draw OcTree Box",IDC_STATIC,24,113,119,8,
+                    SS_NOPREFIX
+    LTEXT           """L"" - ON/OFF Light",IDC_STATIC,24,138,119,8,
+                    SS_NOPREFIX
+    LTEXT           """9"" - Save VRML",IDC_STATIC,23,121,119,8,SS_NOPREFIX
+    LTEXT           """0"" - Recalculate Flow",IDC_STATIC,23,129,119,8,
+                    SS_NOPREFIX
+    LTEXT           """K"" - Correct Mesh Structure (Close Holes, Delete Bounduary Faces, Regolarize Normals)",
+                    IDC_STATIC,23,147,294,8,SS_NOPREFIX
+    LTEXT           """J"" - Remesh",IDC_STATIC,24,155,96,10,SS_NOPREFIX
+    LTEXT           """1"" - Draw Vector Field",IDC_STATIC,24,52,119,8,
+                    SS_NOPREFIX
+    LTEXT           """R"" - Add Mesh Resolution (Subdivision by area)",
+                    IDC_STATIC,24,164,170,10,SS_NOPREFIX
+    LTEXT           """Q"" - Change Debug View",IDC_STATIC,23,173,108,10,
+                    SS_NOPREFIX
+    LTEXT           """ENTER"" - Start Iteration",IDC_STATIC,24,182,108,10,
+                    SS_NOPREFIX
+    LTEXT           """."" - Fetch: Reload last saved model",IDC_STATIC,25,
+                    191,150,10,SS_NOPREFIX
+    GROUPBOX        "Comandi",IDC_STATIC,7,43,312,175
+    LTEXT           ""","" - Hold: Save model",IDC_STATIC,25,200,150,10,
+                    SS_NOPREFIX
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 218
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_APP_TITLE           "octree_example"
+    IDC_OCTREE_EXAMPLE      "OCTREE_EXAMPLE"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Italian (Italy) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ITA)
+#ifdef _WIN32
+LANGUAGE LANG_ITALIAN, SUBLANG_ITALIAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU2 MENU 
+BEGIN
+    POPUP "Debug"
+    BEGIN
+        MENUITEM "Change View",                 ID_DEBUG_CHANGEVIEW
+        MENUITEM "Enable/Disable View (Force Effect)", ID_DEBUG_DISABLE
+        MENUITEM SEPARATOR
+        MENUITEM "Close",                       ID_DEBUG_CLOSE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+#endif    // Italian (Italy) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

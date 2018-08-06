@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2546FA7A-B321-41C3-A25B-B674BE730070}</ProjectGuid>
+    <RootNamespace>gammalib</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>Lib\</OutDir>
+    <IntDir>Debug\</IntDir>
+    <TargetName>$(ProjectName)d</TargetName>
+    <CodeAnalysisRuleSet>NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>Lib\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)64d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>Lib\</OutDir>
+    <IntDir>Release\</IntDir>
+    <CodeAnalysisRuleSet>NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>Lib\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)64</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\Lib;..\..\..\Common Libs\newmat;..\..\..\Common Libs\Levenberg-Marquardt;..\..\..\Common Libs\opencv_win\build\include;..\..\..\Common Libs\glew\include\GL;..\..\..\Common Libs\nvapi;..\..\..\Common Libs\lp_solve;..\..\..\Common Libs\ffmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_DEPRECATE ;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <OpenMPSupport>false</OpenMPSupport>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>..\..\..\Common Libs\ffmpeg\lib32\*.lib;..\..\..\Common Libs\newmat\newmatd.lib;..\..\..\Common Libs\CLAPACK\Debug\clapack.lib;..\..\..\Common Libs\CLAPACK\Debug\blas.lib;..\..\..\Common Libs\CLAPACK\Debug\libf2c.lib;..\..\..\Common Libs\Levenberg-Marquardt\levmard.lib;..\GL_lib\glut32.lib;..\..\..\Common Libs\glew\lib\glew32.lib;opengl32.lib;glu32.lib;mf.lib;mfplat.lib;mfuuid.lib;strmiids.lib;Shlwapi.lib;..\..\..\Common Libs\lp_solve\lib\liblpsolve55.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\Lib;..\..\..\Common Libs\newmat;..\..\..\Common Libs\Levenberg-Marquardt;..\..\..\Common Libs\opencv_win\build\include;..\..\..\Common Libs\glew\include\GL;..\..\..\Common Libs\nvapi;..\..\..\Common Libs\lp_solve;..\..\..\Common Libs\ffmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_DEPRECATE ;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <OpenMPSupport>false</OpenMPSupport>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>..\..\..\Common Libs\ffmpeg\lib64\*.lib;..\..\..\Common Libs\newmat\newmat64d.lib;..\..\..\Common Libs\CLAPACK\Debug64\clapack.lib;..\..\..\Common Libs\CLAPACK\Debug64\blas.lib;..\..\..\Common Libs\CLAPACK\Debug64\libf2c.lib;..\..\..\Common Libs\Levenberg-Marquardt\levmar64d.lib;..\..\..\Common Libs\glew\lib64\glew32.lib;opengl32.lib;glu32.lib;..\GL_lib\glut64.lib;mf.lib;mfplat.lib;mfuuid.lib;strmiids.lib;Shlwapi.lib;..\..\..\Common Libs\lp_solve\lib\liblpsolve55_64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>..\Lib;..\..\..\Common Libs\newmat;..\..\..\Common Libs\Levenberg-Marquardt;..\..\..\Common Libs\opencv_win\build\include;..\..\..\Common Libs\glew\include\GL;..\..\..\Common Libs\nvapi;..\..\..\Common Libs\lp_solve;..\..\..\Common Libs\ffmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <OpenMPSupport>false</OpenMPSupport>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <BrowseInformation>false</BrowseInformation>
+      <EnablePREfast>false</EnablePREfast>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>..\..\..\Common Libs\ffmpeg\lib32\*.lib;..\..\..\Common Libs\newmat\newmat.lib;..\..\..\Common Libs\CLAPACK\Release\clapack.lib;..\..\..\Common Libs\CLAPACK\Release\blas.lib;..\..\..\Common Libs\CLAPACK\Release\libf2c.lib;..\..\..\Common Libs\Levenberg-Marquardt\levmar.lib;..\GL_lib\glut32.lib;..\..\..\Common Libs\glew\lib\glew32.lib;opengl32.lib;glu32.lib;mf.lib;mfplat.lib;mfuuid.lib;strmiids.lib;Shlwapi.lib;..\..\..\Common Libs\lp_solve\lib\liblpsolve55.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName).lib</OutputFile>
+    </Lib>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>..\Lib;..\..\..\Common Libs\newmat;..\..\..\Common Libs\Levenberg-Marquardt;..\..\..\Common Libs\opencv_win\build\include;..\..\..\Common Libs\glew\include\GL;..\..\..\Common Libs\nvapi;..\..\..\Common Libs\lp_solve;..\..\..\Common Libs\ffmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <OpenMPSupport>false</OpenMPSupport>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>..\..\..\Common Libs\ffmpeg\lib64\*.lib;..\..\..\Common Libs\newmat\newmat64.lib;..\..\..\Common Libs\CLAPACK\Release64\clapack.lib;..\..\..\Common Libs\CLAPACK\Release64\blas.lib;..\..\..\Common Libs\CLAPACK\Release64\libf2c.lib;..\..\..\Common Libs\Levenberg-Marquardt\levmar64.lib;..\..\..\Common Libs\glew\lib64\glew32.lib;opengl32.lib;glu32.lib;..\GL_lib\glut64.lib;mf.lib;mfplat.lib;mfuuid.lib;strmiids.lib;Shlwapi.lib;..\..\..\Common Libs\lp_solve\lib\liblpsolve55_64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Lib\common.cpp" />
+    <ClCompile Include="..\Lib\Imaging\ActiveImageRegion.cpp" />
+    <ClCompile Include="..\Lib\Imaging\EdgeDetector.cpp" />
+    <ClCompile Include="..\Lib\Imaging\Image.cpp" />
+    <ClCompile Include="..\Lib\Imaging\ImageUtils.cpp" />
+    <ClCompile Include="..\Lib\Imaging\KLT.cpp" />
+    <ClCompile Include="..\Lib\Imaging\OffScreenRenderer.cpp" />
+    <ClCompile Include="..\Lib\Imaging\OpenCVWrapper.cpp" />
+    <ClCompile Include="..\Lib\Imaging\Renderers.cpp" />
+    <ClCompile Include="..\Lib\Imaging\RenderWindow.cpp" />
+    <ClCompile Include="..\Lib\Imaging\Shader.cpp" />
+    <ClCompile Include="..\Lib\Imaging\SoftZBuffer.cpp" />
+    <ClCompile Include="..\Lib\Imaging\Textel\Mapping.cpp" />
+    <ClCompile Include="..\Lib\Imaging\Video.cpp" />
+    <ClCompile Include="..\Lib\Imaging\Video_OpenNI.cpp" />
+    <ClCompile Include="..\Lib\Math\Arithmetic.cpp" />
+    <ClCompile Include="..\Lib\Math\Blend.cpp" />
+    <ClCompile Include="..\Lib\Math\Bone.cpp" />
+    <ClCompile Include="..\Lib\Math\ExternalEntities.cpp" />
+    <ClCompile Include="..\Lib\Math\Features.cpp" />
+    <ClCompile Include="..\Lib\Math\Interpolation.cpp" />
+    <ClCompile Include="..\Lib\Math\Math_libs.cpp" />
+    <ClCompile Include="..\Lib\Math\Matrix.cpp" />
+    <ClCompile Include="..\Lib\Math\MeshProcessing.cpp" />
+    <ClCompile Include="..\Lib\Math\MultiDimensionalVector.cpp" />
+    <ClCompile Include="..\Lib\Math\Skinned_Mesh.cpp" />
+    <ClCompile Include="..\Lib\Math\View.cpp" />
+    <ClCompile Include="..\Lib\Math\Wavelet.cpp" />
+    <ClCompile Include="..\Lib\StdLib\Crypt.cpp" />
+    <ClCompile Include="..\Lib\StdLib\IOAddOn.cpp" />
+    <ClCompile Include="..\Lib\StdLib\IOBuffer.cpp" />
+    <ClCompile Include="..\Lib\StdLib\ListEntities.cpp" />
+    <ClCompile Include="..\Lib\StdLib\MathAddOn.cpp" />
+    <ClCompile Include="..\Lib\StdLib\MediaPlayer.cpp" />
+    <ClCompile Include="..\Lib\StdLib\ObjectContainer.cpp" />
+    <ClCompile Include="..\Lib\StdLib\Processes.cpp" />
+    <ClCompile Include="..\Lib\StdLib\stack.cpp" />
+    <ClCompile Include="..\Lib\StdLib\Tree.cpp" />
+    <ClCompile Include="..\Lib\StdLib\Word.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Lib\common.h" />
+    <ClInclude Include="..\Lib\GL\gl.h" />
+    <ClInclude Include="..\Lib\GL\glext.h" />
+    <ClInclude Include="..\Lib\GL\glh_extensions.h" />
+    <ClInclude Include="..\Lib\GL\glh_genext.h" />
+    <ClInclude Include="..\Lib\GL\glut.h" />
+    <ClInclude Include="..\Lib\GL\glut64.h" />
+    <ClInclude Include="..\Lib\GL\wglext.h" />
+    <ClInclude Include="..\Lib\Imaging\ActiveImageRegion.h" />
+    <ClInclude Include="..\Lib\Imaging\AdvancedRenderWindows.hpp" />
+    <ClInclude Include="..\Lib\Imaging\colors.h" />
+    <ClInclude Include="..\Lib\Imaging\colors.hpp" />
+    <ClInclude Include="..\Lib\Imaging\DrawPrimitive.hpp" />
+    <ClInclude Include="..\Lib\Imaging\EdgeDetector.h" />
+    <ClInclude Include="..\Lib\Imaging\gpgpu.hpp" />
+    <ClInclude Include="..\Lib\Imaging\Image.h" />
+    <ClInclude Include="..\Lib\Imaging\ImageBMP.hpp" />
+    <ClInclude Include="..\Lib\Imaging\ImageExternals.hpp" />
+    <ClInclude Include="..\Lib\Imaging\ImageUtils.h" />
+    <ClInclude Include="..\Lib\Imaging\KdTree.h" />
+    <ClInclude Include="..\Lib\Imaging\KdTree.hpp" />
+    <ClInclude Include="..\Lib\Imaging\KLT.h" />
+    <ClInclude Include="..\Lib\Imaging\OffScreenRenderer.h" />
+    <ClInclude Include="..\Lib\Imaging\OpenCVWrapper.h" />
+    <ClInclude Include="..\Lib\Imaging\Renderers.h" />
+    <ClInclude Include="..\Lib\Imaging\RenderWindow.h" />
+    <ClInclude Include="..\Lib\Imaging\Shader.h" />
+    <ClInclude Include="..\Lib\Imaging\SoftZBuffer.h" />
+    <ClInclude Include="..\Lib\Imaging\Textel\TextelRenderer.hpp" />
+    <ClInclude Include="..\Lib\Imaging\Video.h" />
+    <ClInclude Include="..\Lib\Imaging\VideoCapture.h" />
+    <ClInclude Include="..\Lib\lib.h" />
+    <ClInclude Include="..\Lib\Math\Arithmetic.h" />
+    <ClInclude Include="..\Lib\Math\Blend.h" />
+    <ClInclude Include="..\Lib\Math\Bone.h" />
+    <ClInclude Include="..\Lib\Math\ExternalEntities.h" />
+    <ClInclude Include="..\Lib\Math\ExternalEntities.hpp" />
+    <ClInclude Include="..\Lib\Math\Features.h" />
+    <ClInclude Include="..\Lib\Math\hypermesh.h" />
+    <ClInclude Include="..\Lib\Math\HyperMesh.hpp" />
+    <ClInclude Include="..\Lib\Math\Interpolation.h" />
+    <ClInclude Include="..\Lib\Math\Intersection.hpp" />
+    <ClInclude Include="..\Lib\Math\Math_libs.h" />
+    <ClInclude Include="..\Lib\Math\Matrix.h" />
+    <ClInclude Include="..\Lib\Math\MeshProcessing.h" />
+    <ClInclude Include="..\Lib\Math\MultiDimensionalVector.h" />
+    <ClInclude Include="..\Lib\Math\OcTree.h" />
+    <ClInclude Include="..\Lib\Math\OcTree.hpp" />
+    <ClInclude Include="..\Lib\Math\Skinned_Mesh.h" />
+    <ClInclude Include="..\Lib\Math\Space.h" />
+    <ClInclude Include="..\Lib\Math\SpaceAddOn.hpp" />
+    <ClInclude Include="..\Lib\Math\Vector.h" />
+    <ClInclude Include="..\Lib\Math\Vector.hpp" />
+    <ClInclude Include="..\Lib\Math\View.h" />
+    <ClInclude Include="..\Lib\Math\Wavelet.h" />
+    <ClInclude Include="..\Lib\stdInclude.h" />
+    <ClInclude Include="..\Lib\StdLib\Crypt.h" />
+    <ClInclude Include="..\Lib\StdLib\IoAddOn.h" />
+    <ClInclude Include="..\Lib\StdLib\IOBuffer.h" />
+    <ClInclude Include="..\Lib\StdLib\LargeDataUtils.h" />
+    <ClInclude Include="..\Lib\StdLib\LargeDataUtils.hpp" />
+    <ClInclude Include="..\Lib\StdLib\List.h" />
+    <ClInclude Include="..\Lib\StdLib\List.hpp" />
+    <ClInclude Include="..\Lib\StdLib\ListEntities.h" />
+    <ClInclude Include="..\Lib\StdLib\MathAddOn.h" />
+    <ClInclude Include="..\Lib\StdLib\MediaPlayer.h" />
+    <ClInclude Include="..\Lib\StdLib\ObjectContainer.h" />
+    <ClInclude Include="..\Lib\StdLib\Processes.h" />
+    <ClInclude Include="..\Lib\StdLib\stack.h" />
+    <ClInclude Include="..\Lib\StdLib\Tree.h" />
+    <ClInclude Include="..\Lib\StdLib\Word.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Lib\parameters.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

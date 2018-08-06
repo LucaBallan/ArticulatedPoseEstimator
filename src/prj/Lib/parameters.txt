@@ -1,0 +1,37 @@
+
+// **********************************************************************
+// ********** Computer Vision Library ***********************************
+// **********************************************************************
+
+
+
+// ------------------------------------------
+// ------------------------------------------
+	//#define FINAL_RELEASE
+	//#define USE_CUDA
+	#define   USE_OPENGL_LIBRARY
+	#define   USE_FIGLET
+	#define   LIST_MEMCHECK
+	#define   SYSTEM_WINDOWS
+	//#define SYSTEM_LINUX
+
+	#define   float_type float
+	//#define FIXED_POINT
+	
+	#define   IMAGE_CHECK_BOUNDARIES
+	//#define   IMAGE_CHECK_BOUNDARIES_WARNING
+
+	//#define   HM_PARTITION_TREE_USE_OPENMP            // Safer (openmp works strangely with a lot of threads in 64bits -> portare MeshProcessing using TaskManager TODOSS (non ci guadagnerei tanto))
+	
+
+
+
+// ------------------------------------------
+//    
+// ------------------------------------------
+
+//#define NO_BANNER
+#define INIT_TIME_SEC 0
+#define DATA_DIRECTORY "..\\binShaders\\"
+
+

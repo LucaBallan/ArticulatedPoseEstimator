@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{97687D8B-0B2B-4690-93CD-7045C3A0A89D}</ProjectGuid>
+    <RootNamespace>ArticulatedPoseEstimator</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\..\bin32\</OutDir>
+    <IntDir>Debug\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>$(ProjectName)d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\..\..\bin64\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>$(ProjectName)d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\..\..\bin32\</OutDir>
+    <IntDir>Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\..\..\bin64\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\Lib;..\..\..\Common Libs\newmat;..\..\..\Common Libs\Levenberg-Marquardt;..\..\..\Common Libs\opencv_win\build\include;..\..\..\Common Libs\glew\include\GL;..\..\..\Common Libs\nvapi;..\..\..\Common Libs\lp_solve;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_DEPRECATE ;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <OpenMPSupport>false</OpenMPSupport>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Comdlg32.lib;gammalibd.lib;..\..\..\Common Libs\opencv_win\make32\lib\Debug\*.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName).exe</OutputFile>
+      <AdditionalLibraryDirectories>..\GL_lib;..\..\..\Common Libs\opencv_win\make32\lib\;..\..\..\Common Libs\smctc\lib\;..\gammalib\Lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\Lib;..\..\..\Common Libs\newmat;..\..\..\Common Libs\Levenberg-Marquardt;..\..\..\Common Libs\opencv_win\build\include;..\..\..\Common Libs\glew\include\GL;..\..\..\Common Libs\nvapi;..\..\..\Common Libs\lp_solve;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_DEPRECATE ;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <OpenMPSupport>false</OpenMPSupport>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Comdlg32.lib;gammalib64d.lib;..\..\..\Common Libs\opencv_win\make64\lib\Debug\*.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName).exe</OutputFile>
+      <AdditionalLibraryDirectories>..\GL_lib;..\..\..\Common Libs\opencv_win\make64\lib\;..\..\..\Common Libs\smctc\lib\;..\gammalib\Lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>..\Lib;..\..\..\Common Libs\newmat;..\..\..\Common Libs\Levenberg-Marquardt;..\..\..\Common Libs\opencv_win\build\include;..\..\..\Common Libs\glew\include\GL;..\..\..\Common Libs\nvapi;..\..\..\Common Libs\lp_solve;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_DEPRECATE ;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <OpenMPSupport>false</OpenMPSupport>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <BrowseInformation>false</BrowseInformation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Comdlg32.lib;gammalib.lib;..\..\..\Common Libs\opencv_win\make32\lib\Release\*.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName).exe</OutputFile>
+      <AdditionalLibraryDirectories>..\GL_lib;..\..\..\Common Libs\opencv_win\make32\lib\;..\..\..\Common Libs\smctc\lib\;..\gammalib\Lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers />
+    </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>..\Lib;..\..\..\Common Libs\newmat;..\..\..\Common Libs\Levenberg-Marquardt;..\..\..\Common Libs\opencv_win\build\include;..\..\..\Common Libs\glew\include\GL;..\..\..\Common Libs\nvapi;..\..\..\Common Libs\lp_solve;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_DEPRECATE ;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <OpenMPSupport>false</OpenMPSupport>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Comdlg32.lib;gammalib64.lib;..\..\..\Common Libs\opencv_win\make64\lib\Release\*.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName).exe</OutputFile>
+      <AdditionalLibraryDirectories>..\GL_lib;..\..\..\Common Libs\opencv_win\make64\lib\;..\..\..\Common Libs\smctc\lib\;..\gammalib\Lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ArticulatedPoseEstimator.cpp" />
+    <ClCompile Include="Articulated_ICP.cpp" />
+    <ClCompile Include="IKSolver.cpp" />
+    <ClCompile Include="PoseEstimator.cpp" />
+    <ClCompile Include="SalientPoints.cpp" />
+    <ClCompile Include="Stocastic_Articulated_ICP.cpp" />
+    <ClCompile Include="Time_Articulated_ICP.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Lib\common.h" />
+    <ClInclude Include="..\Lib\Cuda\Cuda.h" />
+    <ClInclude Include="..\Lib\Cuda\pba2D.h" />
+    <ClInclude Include="..\Lib\GL\gl.h" />
+    <ClInclude Include="..\Lib\GL\glext.h" />
+    <ClInclude Include="..\Lib\GL\glh_extensions.h" />
+    <ClInclude Include="..\Lib\GL\glh_genext.h" />
+    <ClInclude Include="..\Lib\GL\glut.h" />
+    <ClInclude Include="..\Lib\GL\glut64.h" />
+    <ClInclude Include="..\Lib\GL\wglext.h" />
+    <ClInclude Include="..\Lib\Imaging\ActiveImageRegion.h" />
+    <ClInclude Include="..\Lib\Imaging\colors.h" />
+    <ClInclude Include="..\Lib\Imaging\EdgeDetector.h" />
+    <ClInclude Include="..\Lib\Imaging\Image.h" />
+    <ClInclude Include="..\Lib\Imaging\ImageUtils.h" />
+    <ClInclude Include="..\Lib\Imaging\KdTree.h" />
+    <ClInclude Include="..\Lib\Imaging\KLT.h" />
+    <ClInclude Include="..\Lib\Imaging\OffScreenRenderer.h" />
+    <ClInclude Include="..\Lib\Imaging\OpenCVWrapper.h" />
+    <ClInclude Include="..\Lib\Imaging\Renderers.h" />
+    <ClInclude Include="..\Lib\Imaging\RenderWindow.h" />
+    <ClInclude Include="..\Lib\Imaging\Shader.h" />
+    <ClInclude Include="..\Lib\Imaging\SoftZBuffer.h" />
+    <ClInclude Include="..\Lib\Imaging\Video.h" />
+    <ClInclude Include="..\Lib\Imaging\VideoCapture.h" />
+    <ClInclude Include="..\Lib\lib.h" />
+    <ClInclude Include="..\Lib\Math\3DReconstruction.h" />
+    <ClInclude Include="..\Lib\Math\Arithmetic.h" />
+    <ClInclude Include="..\Lib\Math\Blend.h" />
+    <ClInclude Include="..\Lib\Math\Bone.h" />
+    <ClInclude Include="..\Lib\Math\ExternalEntities.h" />
+    <ClInclude Include="..\Lib\Math\Features.h" />
+    <ClInclude Include="..\Lib\Math\hypermesh.h" />
+    <ClInclude Include="..\Lib\Math\Interpolation.h" />
+    <ClInclude Include="..\Lib\Math\Math_libs.h" />
+    <ClInclude Include="..\Lib\Math\Matrix.h" />
+    <ClInclude Include="..\Lib\Math\MeshProcessing.h" />
+    <ClInclude Include="..\Lib\Math\MultiDimensionalVector.h" />
+    <ClInclude Include="..\Lib\Math\OcTree.h" />
+    <ClInclude Include="..\Lib\Math\Skinned_Mesh.h" />
+    <ClInclude Include="..\Lib\Math\Space.h" />
+    <ClInclude Include="..\Lib\Math\Vector.h" />
+    <ClInclude Include="..\Lib\Math\View.h" />
+    <ClInclude Include="..\Lib\Math\VoxelGrid.h" />
+    <ClInclude Include="..\Lib\Math\Wavelet.h" />
+    <ClInclude Include="..\Lib\stdInclude.h" />
+    <ClInclude Include="..\Lib\StdLib\Crypt.h" />
+    <ClInclude Include="..\Lib\StdLib\IoAddOn.h" />
+    <ClInclude Include="..\Lib\StdLib\IOBuffer.h" />
+    <ClInclude Include="..\Lib\StdLib\LargeDataUtils.h" />
+    <ClInclude Include="..\Lib\StdLib\List.h" />
+    <ClInclude Include="..\Lib\StdLib\ListEntities.h" />
+    <ClInclude Include="..\Lib\StdLib\MathAddOn.h" />
+    <ClInclude Include="..\Lib\StdLib\MediaPlayer.h" />
+    <ClInclude Include="..\Lib\StdLib\ObjectContainer.h" />
+    <ClInclude Include="..\Lib\StdLib\Processes.h" />
+    <ClInclude Include="..\Lib\StdLib\stack.h" />
+    <ClInclude Include="..\Lib\StdLib\Tree.h" />
+    <ClInclude Include="..\Lib\StdLib\Word.h" />
+    <ClInclude Include="ArticulatedPoseEstimator.h" />
+    <ClInclude Include="Articulated_ICP.h" />
+    <ClInclude Include="Articulated_ICP_Correspondences.h" />
+    <ClInclude Include="Articulated_ICP_Debug.h" />
+    <ClInclude Include="Articulated_ICP_Utils.h" />
+    <ClInclude Include="IKSolver.h" />
+    <ClInclude Include="input_parser.h" />
+    <ClInclude Include="PoseEstimator.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="SalientPoints.h" />
+    <ClInclude Include="Stocastic_Articulated_ICP.h" />
+    <ClInclude Include="Time_Articulated_ICP.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Rt3d.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

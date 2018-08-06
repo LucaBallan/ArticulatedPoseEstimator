@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{85a6fc56-81b4-4b7b-9faf-c9e5b92a92c4}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Imaging">
+      <UniqueIdentifier>{2811c5d9-efd2-49d1-ac59-4cbc0c3b4eb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Math">
+      <UniqueIdentifier>{3d3a9971-1834-4c69-aa6a-edf214219b84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Objects">
+      <UniqueIdentifier>{b68abdb9-2287-4bc9-b728-2b6d9a1ea714}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\StrLib">
+      <UniqueIdentifier>{6dc6a556-4392-49e4-affa-db6be692c88f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Structures">
+      <UniqueIdentifier>{87d54b10-9195-4e02-b753-a21e901978f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Visualization">
+      <UniqueIdentifier>{51c74a16-495d-443e-8d33-03054ebba1d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{9ae439eb-d375-4bb8-a7a4-7d7c1cf64aa0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Imaging">
+      <UniqueIdentifier>{601e4100-0e6d-46e7-9bf9-c47cb2d5436d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Math">
+      <UniqueIdentifier>{ffff1a2c-7296-4a73-9f50-f7a9eb3d87c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Visualization">
+      <UniqueIdentifier>{3a7968e4-568b-466d-b2bf-00c44e7f9087}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\StdLib">
+      <UniqueIdentifier>{246906cb-939e-44b1-b177-4b98b270efe9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Structures">
+      <UniqueIdentifier>{a9d3f040-e146-41ca-abb5-4432af6de2a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Objects">
+      <UniqueIdentifier>{ec2fcdcb-f48a-401e-b5f7-84d7e90620c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GL">
+      <UniqueIdentifier>{14bbdd33-52ed-477e-93c4-ab3a9f4278f3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Lib\common.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Math\Blend.cpp">
+      <Filter>Source Files\Imaging</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Imaging\EdgeDetector.cpp">
+      <Filter>Source Files\Imaging</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Imaging\Image.cpp">
+      <Filter>Source Files\Imaging</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Imaging\ImageUtils.cpp">
+      <Filter>Source Files\Imaging</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Imaging\KLT.cpp">
+      <Filter>Source Files\Imaging</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Imaging\OffScreenRenderer.cpp">
+      <Filter>Source Files\Imaging</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Imaging\OpenCVWrapper.cpp">
+      <Filter>Source Files\Imaging</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Imaging\SoftZBuffer.cpp">
+      <Filter>Source Files\Imaging</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Imaging\Video.cpp">
+      <Filter>Source Files\Imaging</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Imaging\Video_OpenNI.cpp">
+      <Filter>Source Files\Imaging</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Math\Wavelet.cpp">
+      <Filter>Source Files\Imaging</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Math\Arithmetic.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Math\Features.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Math\Interpolation.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Math\Math_libs.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\StdLib\MathAddOn.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Math\Matrix.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Math\MeshProcessing.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Math\MultiDimensionalVector.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Math\View.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Math\Bone.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Math\Skinned_Mesh.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\StdLib\Crypt.cpp">
+      <Filter>Source Files\StrLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\StdLib\IOAddOn.cpp">
+      <Filter>Source Files\StrLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\StdLib\IOBuffer.cpp">
+      <Filter>Source Files\StrLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\StdLib\MediaPlayer.cpp">
+      <Filter>Source Files\StrLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\StdLib\Processes.cpp">
+      <Filter>Source Files\StrLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\StdLib\Word.cpp">
+      <Filter>Source Files\StrLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Math\ExternalEntities.cpp">
+      <Filter>Source Files\Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\StdLib\ListEntities.cpp">
+      <Filter>Source Files\Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\StdLib\ObjectContainer.cpp">
+      <Filter>Source Files\Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\StdLib\stack.cpp">
+      <Filter>Source Files\Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\StdLib\Tree.cpp">
+      <Filter>Source Files\Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Imaging\ActiveImageRegion.cpp">
+      <Filter>Source Files\Visualization</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Imaging\Textel\Mapping.cpp">
+      <Filter>Source Files\Visualization</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Imaging\Renderers.cpp">
+      <Filter>Source Files\Visualization</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Imaging\RenderWindow.cpp">
+      <Filter>Source Files\Visualization</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lib\Imaging\Shader.cpp">
+      <Filter>Source Files\Visualization</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Lib\stdInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Blend.h">
+      <Filter>Header Files\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\colors.h">
+      <Filter>Header Files\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\colors.hpp">
+      <Filter>Header Files\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\EdgeDetector.h">
+      <Filter>Header Files\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\Image.h">
+      <Filter>Header Files\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\ImageBMP.hpp">
+      <Filter>Header Files\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\ImageExternals.hpp">
+      <Filter>Header Files\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\ImageUtils.h">
+      <Filter>Header Files\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\KLT.h">
+      <Filter>Header Files\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\OffScreenRenderer.h">
+      <Filter>Header Files\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\OpenCVWrapper.h">
+      <Filter>Header Files\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\SoftZBuffer.h">
+      <Filter>Header Files\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\Textel\TextelRenderer.hpp">
+      <Filter>Header Files\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\Video.h">
+      <Filter>Header Files\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Arithmetic.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Features.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Interpolation.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Intersection.hpp">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Math_libs.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\MathAddOn.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Matrix.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\MeshProcessing.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\MultiDimensionalVector.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Space.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\SpaceAddOn.hpp">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Vector.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Vector.hpp">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\View.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Wavelet.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\ActiveImageRegion.h">
+      <Filter>Header Files\Visualization</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\AdvancedRenderWindows.hpp">
+      <Filter>Header Files\Visualization</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\DrawPrimitive.hpp">
+      <Filter>Header Files\Visualization</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\Renderers.h">
+      <Filter>Header Files\Visualization</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\RenderWindow.h">
+      <Filter>Header Files\Visualization</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\Shader.h">
+      <Filter>Header Files\Visualization</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\VideoCapture.h">
+      <Filter>Header Files\Visualization</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\Crypt.h">
+      <Filter>Header Files\StdLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\IoAddOn.h">
+      <Filter>Header Files\StdLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\IOBuffer.h">
+      <Filter>Header Files\StdLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\MediaPlayer.h">
+      <Filter>Header Files\StdLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\Processes.h">
+      <Filter>Header Files\StdLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\Word.h">
+      <Filter>Header Files\StdLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\ExternalEntities.h">
+      <Filter>Header Files\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\ExternalEntities.hpp">
+      <Filter>Header Files\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\KdTree.h">
+      <Filter>Header Files\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\KdTree.hpp">
+      <Filter>Header Files\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\LargeDataUtils.h">
+      <Filter>Header Files\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\LargeDataUtils.hpp">
+      <Filter>Header Files\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\List.h">
+      <Filter>Header Files\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\List.hpp">
+      <Filter>Header Files\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\ListEntities.h">
+      <Filter>Header Files\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\ObjectContainer.h">
+      <Filter>Header Files\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\OcTree.h">
+      <Filter>Header Files\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\OcTree.hpp">
+      <Filter>Header Files\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\stack.h">
+      <Filter>Header Files\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\Tree.h">
+      <Filter>Header Files\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Bone.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\hypermesh.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\HyperMesh.hpp">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Skinned_Mesh.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\GL\gl.h">
+      <Filter>Header Files\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\GL\glext.h">
+      <Filter>Header Files\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\GL\glh_extensions.h">
+      <Filter>Header Files\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\GL\glh_genext.h">
+      <Filter>Header Files\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\GL\glut.h">
+      <Filter>Header Files\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\GL\glut64.h">
+      <Filter>Header Files\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\GL\wglext.h">
+      <Filter>Header Files\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\gpgpu.hpp">
+      <Filter>Header Files\Visualization</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\lib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Lib\parameters.txt" />
+  </ItemGroup>
+</Project>

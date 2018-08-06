@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{055e2b52-5d2e-4b42-bab7-c0ef225a5518}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{449bc25c-c258-479f-9ae3-769b0b0251fb}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{c3d743bc-1843-4ad2-97f3-059f66c0f1a9}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="gammaLib">
+      <UniqueIdentifier>{4fa4a2a6-accb-41b0-a3f4-3bd946f85200}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gammaLib\Cuda">
+      <UniqueIdentifier>{db78eb11-9ca9-4aa9-8f66-9e205be3e76c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gammaLib\GL">
+      <UniqueIdentifier>{5a46507e-29bb-4e79-9b7b-62df8b6abcbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gammaLib\Imaging">
+      <UniqueIdentifier>{d1de61aa-927e-4034-bead-03efa35679a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gammaLib\Math">
+      <UniqueIdentifier>{4b09f805-c617-4d72-89a6-4d78f6ccab26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gammaLib\Objects">
+      <UniqueIdentifier>{8216209c-bab0-4021-9e53-1c9a71862865}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gammaLib\StdLib">
+      <UniqueIdentifier>{39e1223b-82f7-4777-ac1e-9bc13d0d5668}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gammaLib\Structures">
+      <UniqueIdentifier>{65c3a006-049a-435f-becf-31a4057bfdcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gammaLib\Visualization">
+      <UniqueIdentifier>{b632748a-a8f3-476b-ae64-dc3afd34199f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Compare.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IKSolver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CompareMove.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="evolution.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\common.h">
+      <Filter>gammaLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\lib.h">
+      <Filter>gammaLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\stdInclude.h">
+      <Filter>gammaLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Cuda\Cuda.h">
+      <Filter>gammaLib\Cuda</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Cuda\pba2D.h">
+      <Filter>gammaLib\Cuda</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\GL\gl.h">
+      <Filter>gammaLib\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\GL\glext.h">
+      <Filter>gammaLib\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\GL\glh_extensions.h">
+      <Filter>gammaLib\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\GL\glh_genext.h">
+      <Filter>gammaLib\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\GL\glut.h">
+      <Filter>gammaLib\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\GL\glut64.h">
+      <Filter>gammaLib\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\GL\wglext.h">
+      <Filter>gammaLib\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\colors.h">
+      <Filter>gammaLib\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\EdgeDetector.h">
+      <Filter>gammaLib\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\Image.h">
+      <Filter>gammaLib\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\ImageUtils.h">
+      <Filter>gammaLib\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\KLT.h">
+      <Filter>gammaLib\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\OffScreenRenderer.h">
+      <Filter>gammaLib\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\OpenCVWrapper.h">
+      <Filter>gammaLib\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\SoftZBuffer.h">
+      <Filter>gammaLib\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\Video.h">
+      <Filter>gammaLib\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Blend.h">
+      <Filter>gammaLib\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\3DReconstruction.h">
+      <Filter>gammaLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Arithmetic.h">
+      <Filter>gammaLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Features.h">
+      <Filter>gammaLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Interpolation.h">
+      <Filter>gammaLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Math_libs.h">
+      <Filter>gammaLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Matrix.h">
+      <Filter>gammaLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\MeshProcessing.h">
+      <Filter>gammaLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\MultiDimensionalVector.h">
+      <Filter>gammaLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Space.h">
+      <Filter>gammaLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Vector.h">
+      <Filter>gammaLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\View.h">
+      <Filter>gammaLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Wavelet.h">
+      <Filter>gammaLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\MathAddOn.h">
+      <Filter>gammaLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Bone.h">
+      <Filter>gammaLib\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\hypermesh.h">
+      <Filter>gammaLib\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Skinned_Mesh.h">
+      <Filter>gammaLib\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\VoxelGrid.h">
+      <Filter>gammaLib\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\Crypt.h">
+      <Filter>gammaLib\StdLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\IoAddOn.h">
+      <Filter>gammaLib\StdLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\IOBuffer.h">
+      <Filter>gammaLib\StdLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\MediaPlayer.h">
+      <Filter>gammaLib\StdLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\Processes.h">
+      <Filter>gammaLib\StdLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\Word.h">
+      <Filter>gammaLib\StdLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\KdTree.h">
+      <Filter>gammaLib\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\ExternalEntities.h">
+      <Filter>gammaLib\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\OcTree.h">
+      <Filter>gammaLib\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\LargeDataUtils.h">
+      <Filter>gammaLib\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\List.h">
+      <Filter>gammaLib\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\ListEntities.h">
+      <Filter>gammaLib\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\ObjectContainer.h">
+      <Filter>gammaLib\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\stack.h">
+      <Filter>gammaLib\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\Tree.h">
+      <Filter>gammaLib\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\ActiveImageRegion.h">
+      <Filter>gammaLib\Visualization</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\Renderers.h">
+      <Filter>gammaLib\Visualization</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\RenderWindow.h">
+      <Filter>gammaLib\Visualization</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\Shader.h">
+      <Filter>gammaLib\Visualization</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\VideoCapture.h">
+      <Filter>gammaLib\Visualization</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="octree_example.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Rt3d.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Rt3dsmall.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

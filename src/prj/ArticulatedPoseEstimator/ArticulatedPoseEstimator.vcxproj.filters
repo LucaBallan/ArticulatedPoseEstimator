@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{14af3109-b4e9-4932-af70-5136e1710203}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{6357d1d9-27bf-465e-a6ae-a50a6a7b2ed9}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{85d25ad3-c58b-4832-8301-907538f41f15}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="gammaLib">
+      <UniqueIdentifier>{2eeb5717-6a18-430b-b917-a38705492a21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gammaLib\Cuda">
+      <UniqueIdentifier>{36b0cbcc-dab4-4f64-9d22-7cc461d417d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gammaLib\GL">
+      <UniqueIdentifier>{e1d7818e-8505-4230-abc8-d41006f6f77d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gammaLib\Imaging">
+      <UniqueIdentifier>{b5457188-f165-42e9-830d-d40acd233ed1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gammaLib\Math">
+      <UniqueIdentifier>{da219d8d-0b91-4ae2-899e-af7abab5fd23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gammaLib\Objects">
+      <UniqueIdentifier>{6a31c2a8-d4cd-40f7-a026-df9a08c6ef1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gammaLib\StdLib">
+      <UniqueIdentifier>{dbe5f8dc-c967-4b2c-bbb0-a2397cccc423}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gammaLib\Structures">
+      <UniqueIdentifier>{989e0c54-8c63-4048-8887-aa4365e615cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gammaLib\Visualization">
+      <UniqueIdentifier>{a4a8742c-16c8-4aba-b148-66a1f8de528b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Articulated_ICP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IKSolver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ArticulatedPoseEstimator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PoseEstimator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SalientPoints.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Stocastic_Articulated_ICP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Time_Articulated_ICP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Articulated_ICP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Articulated_ICP_Correspondences.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Articulated_ICP_Debug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Articulated_ICP_Utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IKSolver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="input_parser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ArticulatedPoseEstimator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PoseEstimator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SalientPoints.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Stocastic_Articulated_ICP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\common.h">
+      <Filter>gammaLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\lib.h">
+      <Filter>gammaLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\stdInclude.h">
+      <Filter>gammaLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Cuda\Cuda.h">
+      <Filter>gammaLib\Cuda</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Cuda\pba2D.h">
+      <Filter>gammaLib\Cuda</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\GL\gl.h">
+      <Filter>gammaLib\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\GL\glext.h">
+      <Filter>gammaLib\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\GL\glh_extensions.h">
+      <Filter>gammaLib\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\GL\glh_genext.h">
+      <Filter>gammaLib\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\GL\glut.h">
+      <Filter>gammaLib\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\GL\glut64.h">
+      <Filter>gammaLib\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\GL\wglext.h">
+      <Filter>gammaLib\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\colors.h">
+      <Filter>gammaLib\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\EdgeDetector.h">
+      <Filter>gammaLib\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\Image.h">
+      <Filter>gammaLib\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\ImageUtils.h">
+      <Filter>gammaLib\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\KLT.h">
+      <Filter>gammaLib\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\OffScreenRenderer.h">
+      <Filter>gammaLib\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\OpenCVWrapper.h">
+      <Filter>gammaLib\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\SoftZBuffer.h">
+      <Filter>gammaLib\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\Video.h">
+      <Filter>gammaLib\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Blend.h">
+      <Filter>gammaLib\Imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\3DReconstruction.h">
+      <Filter>gammaLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Arithmetic.h">
+      <Filter>gammaLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Features.h">
+      <Filter>gammaLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Interpolation.h">
+      <Filter>gammaLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Math_libs.h">
+      <Filter>gammaLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Matrix.h">
+      <Filter>gammaLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\MeshProcessing.h">
+      <Filter>gammaLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\MultiDimensionalVector.h">
+      <Filter>gammaLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Space.h">
+      <Filter>gammaLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Vector.h">
+      <Filter>gammaLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\View.h">
+      <Filter>gammaLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Wavelet.h">
+      <Filter>gammaLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\MathAddOn.h">
+      <Filter>gammaLib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Bone.h">
+      <Filter>gammaLib\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\hypermesh.h">
+      <Filter>gammaLib\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\Skinned_Mesh.h">
+      <Filter>gammaLib\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\VoxelGrid.h">
+      <Filter>gammaLib\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\Crypt.h">
+      <Filter>gammaLib\StdLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\IoAddOn.h">
+      <Filter>gammaLib\StdLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\IOBuffer.h">
+      <Filter>gammaLib\StdLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\MediaPlayer.h">
+      <Filter>gammaLib\StdLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\Processes.h">
+      <Filter>gammaLib\StdLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\Word.h">
+      <Filter>gammaLib\StdLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\KdTree.h">
+      <Filter>gammaLib\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\ExternalEntities.h">
+      <Filter>gammaLib\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Math\OcTree.h">
+      <Filter>gammaLib\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\LargeDataUtils.h">
+      <Filter>gammaLib\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\List.h">
+      <Filter>gammaLib\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\ListEntities.h">
+      <Filter>gammaLib\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\ObjectContainer.h">
+      <Filter>gammaLib\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\stack.h">
+      <Filter>gammaLib\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\StdLib\Tree.h">
+      <Filter>gammaLib\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\ActiveImageRegion.h">
+      <Filter>gammaLib\Visualization</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\Renderers.h">
+      <Filter>gammaLib\Visualization</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\RenderWindow.h">
+      <Filter>gammaLib\Visualization</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\Shader.h">
+      <Filter>gammaLib\Visualization</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lib\Imaging\VideoCapture.h">
+      <Filter>gammaLib\Visualization</Filter>
+    </ClInclude>
+    <ClInclude Include="Time_Articulated_ICP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Rt3d.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
