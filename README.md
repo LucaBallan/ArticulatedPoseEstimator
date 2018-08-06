@@ -1,6 +1,6 @@
 # Articulated Pose Estimator
 
-Implementation of the paper:
+Implementation of the papers:
   
 **Motion Capture of Hands in Action using Discriminative Salient Points**
 
@@ -23,7 +23,9 @@ http://lucaballan.altervista.org/pdfs/3DPVT08.pdf
 
 <BR>
 <BR>
-  
+If you are using this code, please cite these papers.
+<BR>
+
 INSTALL
 ----
  - Install Opencv in "Common Libs\opencv_win"
