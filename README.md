@@ -19,6 +19,11 @@ If you are using this code, please cite the above papers.
 <BR>
 <BR>
 
+![Alt text](sample1.png?raw=true "Title")
+![Alt text](sample2.jpg?raw=true "Title")
+![Alt text](sample3.png?raw=true "Title")
+
+
 INSTALL
 ----
  - Install Opencv in "Common Libs\opencv_win"
