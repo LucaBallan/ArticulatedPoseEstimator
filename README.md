@@ -2,28 +2,21 @@
 
 Implementation of the papers:
   
-**Motion Capture of Hands in Action using Discriminative Salient Points**
-
-L. Ballan, A. Taneja, J. Gall, L. Van Gool, M. Pollefeys
-
-ECCV 2012, Firenze, Italy
-
-http://lucaballan.altervista.org/pdfs/ballanECCV12.pdf
-
+**Motion Capture of Hands in Action using Discriminative Salient Points** <BR>
+L. Ballan, A. Taneja, J. Gall, L. Van Gool, M. Pollefeys<BR>
+ECCV 2012, Firenze, Italy<BR>
+http://lucaballan.altervista.org/pdfs/ballanECCV12.pdf<BR>
 
 and
 
-**Marker-less Motion Capture of Skinned Models in a Four Camera Set-up using Optical Flow and Silhouettes**
-
-L. Ballan and G. M. Cortelazzo
-
-3DPVT 2008, Atlanta, GA, USA
-
-http://lucaballan.altervista.org/pdfs/3DPVT08.pdf
+**Marker-less Motion Capture of Skinned Models in a Four Camera Set-up using Optical Flow and Silhouettes**<BR>
+L. Ballan and G. M. Cortelazzo<BR>
+3DPVT 2008, Atlanta, GA, USA<BR>
+http://lucaballan.altervista.org/pdfs/3DPVT08.pdf<BR>
 
 <BR>
+**If you are using this code, please cite the above papers.**
 <BR>
-If you are using this code, please cite these papers.
 <BR>
 
 INSTALL
