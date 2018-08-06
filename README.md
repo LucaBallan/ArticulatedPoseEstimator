@@ -15,7 +15,7 @@ L. Ballan and G. M. Cortelazzo<BR>
 http://lucaballan.altervista.org/pdfs/3DPVT08.pdf<BR>
 
 <BR>
-**If you are using this code, please cite the above papers.**
+If you are using this code, please cite the above papers.
 <BR>
 <BR>
 
