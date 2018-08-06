@@ -1,6 +1,6 @@
 # Articulated Pose Estimator
 
-Implementation of the papers:
+Implementation of these papers:
   
 **Motion Capture of Hands in Action using Discriminative Salient Points** <BR>
 L. Ballan, A. Taneja, J. Gall, L. Van Gool, M. Pollefeys<BR>
