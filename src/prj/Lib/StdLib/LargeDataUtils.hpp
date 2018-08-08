@@ -34,96 +34,6 @@
 
 
 
-/*
-#define DATA_ABSENT DBL_MAX
-
-Rec_Evolution::Rec_Evolution(UINT NumData,UINT MaxNumDataToRec,UINT MaxRecLenght) {
-
-	this->NumData=NumData;
-
-	if (NumData>MaxNumDataToRec) NumDataToRec=MaxNumDataToRec;
-	else NumDataToRec=NumData;
-
-	Data=new double*[NumDataToRec];
-	if (Data==NULL) ErrorExit("Rec_Evolution: Out of memory.");
-	
-	for(UINT i=0;i<NumDataToRec;i++) {
-		Data[i]=new double[MaxRecLenght];
-		if (Data[i]==NULL) ErrorExit("Rec_Evolution: Out of memory.");
-		
-		for(UINT j=0;j<MaxRecLenght;j++) Data[i][j]=DATA_ABSENT;
-	}
-	
-	Index=new int[NumData];
-	if (Index==NULL) ErrorExit("Rec_Evolution: Out of memory.");
-	
-	for(UINT i=0;i<NumData;i++) Index[i]=-1;
-
-	if (NumData==NumDataToRec) {
-			for(UINT i=0;i<NumDataToRec;i++) Index[i]=i;
-	} else {
-		for(UINT i=0;i<NumDataToRec;i++) {
-			int Sel;
-		
-			do {Sel=Uniform_int_rand(0,NumData-1);
-			} while (Index[Sel]!=-1);
-
-			Index[Sel]=i;
-		}
-	}
-
-	Time=0;
-}
-
-Rec_Evolution::~Rec_Evolution() {
-	if (Data!=NULL) {
-		for(UINT i=0;i<NumDataToRec;i++) 
-			if (Data[i]!=NULL) delete [](Data[i]);
-		delete []Data;
-	}
-
-	if (Index!=NULL) delete []Index;
-}
-
-void Rec_Evolution::AddData(UINT index,double value) {
-	if (Index[index]==-1) return;
-
-	Data[Index[index]][Time]=value;
-}
-
-void Rec_Evolution::NextTime() {
-	Time++;
-}
-
-void Rec_Evolution::Save(char *filename) {
-	char Str[70];
-	UINT j;
-
-	OFileBuffer *Out=new OFileBuffer(filename);
-	
-	for(UINT i=0;i<NumDataToRec;i++) {
-		for(j=0;j<NumData;j++) {
-			if (Index[j]==i) break;
-		}
-
-		sprintf(Str,"%i:",j);
-		Out->WriteLine(Str,(int)strlen(Str));
-		
-		for(j=0;j<Time;j++) {
-			if (Data[i][j]!=DATA_ABSENT) sprintf(Str,"	%f",Data[i][j]);
-			else sprintf(Str,"	DATA_ABSENT");
-			
-			Out->WriteLine(Str,(int)strlen(Str));
-		}
-
-		sprintf(Str,"\r\n");
-		Out->WriteLine(Str,(int)strlen(Str));
-	}
-	
-	delete Out;	
-}
-*/
-
 
 int  Statistics::NumStatInstances=0;
 bool Statistics::StatBoxOpen=false;
@@ -225,10 +135,6 @@ int MedianEstimator_compare_double(const void *a,const void *b) {
 }
 double MedianEstimator::getEstimate() {
 	if (LastEntries->numElements()!=history_len) return DBL_MAX;
-	
-	/*double sum=0;
-	for(int i=0;i<LastEntries->numElements();i++) sum+=(*LastEntries)[i];
-	sum/=LastEntries->numElements();*/
 	
 	Array<double> tmp(*LastEntries);
 	tmp.sort(MedianEstimator_compare_double);

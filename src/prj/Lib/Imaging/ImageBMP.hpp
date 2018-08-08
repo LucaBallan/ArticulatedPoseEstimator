@@ -588,40 +588,6 @@ BYTE * MakeDwordAlignedBuf(BYTE *dataBuf,
 }
 
 
-//
-// Reverse of MakeDwordAlignedBuf
-// 
-/*
-BYTE *ReverseDwordAligned(BYTE *inBuf,
-						  UINT widthPix,
-						  UINT height)
-{
-	if (inBuf==NULL)
-		return NULL;
-
-
-	BYTE *tmp;
-	tmp=(BYTE *)new BYTE[height * widthPix * 3];
-	if (tmp==NULL)
-		return NULL;
-
-	UINT row;
-
-	for (row=0;row<height;row++) {
-		for (UINT k=0;k<widthPix;k++) {
-			inBuf[(row*widthPix*4)+
-		}
-	}
-
-/*	for (row=0;row<height;row++) {
-		memcpy((tmp+row * widthPix * 3), 
-				(inBuf + row * widthPix * 4), 
-				widthPix * 3);
-	}
-
-	return tmp;
-}*/
-
 BYTE *DIB2RGB(BYTE *Buf,UINT width,UINT height) {
 	
 	//BYTE *nBuf=ReverseDwordAligned(Buf,width,height);
@@ -776,40 +742,3 @@ void SaveBMP(char *fileName,		    // output path
 	VertFlipBuf(buf, width * 3, height);
 	BGRFromRGB(buf, width, height);
 }
-/*
-ColorRGBA *RGB2RGBA(ColorRGB *Img24bit,int width,int height) {
-	BYTE *nBuf=new BYTE[width*height*4];
-
-	UINT k=0;
-	for(UINT j=0;j<height;j++) {
-		for(UINT i=0;i<width;i++) {
-			ColorRGB C=Img24bit[i+j*width];
-			
-			nBuf[k++]=C.r;
-			nBuf[k++]=C.g;
-			nBuf[k++]=C.b;
-			nBuf[k++]=0;
-		}
-	}
-
-	return (ColorRGBA*) nBuf;
-}
-
-ColorRGB *RGBA2RGB(ColorRGBA *Img32bit,int width,int height) {
-	ColorRGB *nBuf=new ColorRGB[width*height];
-
-	UINT k=0;
-	for(UINT j=0;j<height;j++) {
-		for(UINT i=0;i<width;i++) {
-			ColorRGBA C=Img32bit[i+j*width];
-			
-			nBuf[k].r=C>>16;
-			nBuf[k].g=(C>>8)&0xFF;
-			nBuf[k].b=C&0xFF;
-			k++;
-		}
-	}
-
-	return nBuf;
-}
-*/

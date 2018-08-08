@@ -32,29 +32,4 @@
 
 
 
-
-
-// DEPRECATED!!!!!!!!!!!!! NON DEVE ESSERE USATO
-
-/*
-class OffScreenRenderer: public GPGPU {
-	Matrix P;
-	inline Vector<2> Transform(Vector<3> x);
-	inline void Vertex(Vector<2> P);
-public:
-	OffScreenRenderer(int width, int height,int channels);
-
-	void InitFrame(View *V);
-	void RenderMaskObject(View *V,HyperMesh<3> *mesh,Bitmap<GreyLevel> *I);		            // channels must be 1
-	
-
-	// Deprecated
-	// Vector<3> TransformZ(Vector<3> x);
-	// void RenderFrame(Bitmap<ColorRGB> *I);
-	// void RenderFrame(Bitmap<GreyLevel> *I);
-	// void DrawMesh(HyperMesh<3> *mesh);
-	// void RenderTexturedObject(View *V,HyperMesh<3> *mesh,GLuint Map,Bitmap<ColorRGB> *I);
-};
-
-*/
-
+// DEPRECATED

@@ -34,34 +34,6 @@
 
 
 
-// Record the evolution of MaxNumDataToRec elements random selected elements from 
-// an array of NumData elements in a total trasparent way.
-// Than these record can be saved to make a graph with excel or whatever.
-//
-// Data type is double
-// Index start with 0
-//
-// Used_Memory = 4*MaxRecLenght*min(NumData,MaxNumDataToRec) + 4*NumData
-//
-
-/*
-class Rec_Evolution {
-	double **Data;
-	int *Index;
-	UINT NumDataToRec;
-	UINT NumData;
-	UINT Time;
-
-public:	
-	Rec_Evolution(UINT NumData,UINT MaxNumDataToRec,UINT MaxRecLenght);
-	~Rec_Evolution();
-
-	void AddData(UINT index,double value);
-	void NextTime();
-
-	void Save(char *filename);
-};
-*/
 
 class Statistics {
 	static int  NumStatInstances;

@@ -47,7 +47,7 @@ struct Degrees_of_Freedom_Table_Entry {
 	bool Translable_X;
 	bool Translable_Y;
 	bool Translable_Z;
-	// Note: Le rotazioni sono riferite al sistema di Riferimento del Padre!!!
+	// Note: Rotations are relative to the parent reference system
 	bool Rotable_X;
 	bool Rotable_Y;
 	bool Rotable_Z;

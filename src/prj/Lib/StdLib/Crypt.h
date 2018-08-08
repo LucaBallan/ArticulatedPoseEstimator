@@ -71,34 +71,3 @@ char *getTitle(char *app_title);
 
 
 
-/*
-#ifdef LOAD_SHADERS_FROM_FILE
-#define CREATE_INTERNAL_SHADER(w,shader,vertex,fragment,log) {										\
-	shader=w->CreateShader(DATA_DIRECTORY#vertex".vert.c",DATA_DIRECTORY#fragment".frag.c",log);	\
-}
-#define CREATE_INTERNAL_SHADER_CLASS(w,vertex,fragment,log) {										\
-	Create(w,DATA_DIRECTORY#vertex".vert.c",DATA_DIRECTORY#fragment".frag.c",log);					\
-}
-#else
-#include "shaders_lib.h"
-#define CREATE_INTERNAL_SHADER(w,shader,vertex,fragment,log) {										\
-	char *v=crypt_strX(shader_##vertex,len_##vertex);												\
-	char *f=crypt_strX(shader_##fragment,len_##fragment);											\
-	shader=w->CreateShaderFromCode(v,f,log);														\
-	delete[]v;																						\
-	delete[]f;																						\
-}
-#define CREATE_INTERNAL_SHADER_CLASS(w,vertex,fragment,log) {										\
-	char *v=crypt_strX(shader_##vertex,len_##vertex);												\
-	char *f=crypt_strX(shader_##fragment,len_##fragment);											\
-	CreateFromCode(w,v,f,log);																		\
-	delete[]v;																						\
-	delete[]f;																						\
-}
-#endif
-*/
-
-
-
-
-

@@ -34,7 +34,6 @@
 
 
 
-// TODO: penso funzionino ma ho ho modificato le relazioni tra t0 e t1
 double     R_Lin_Interp(double a,double b,double t,double t0=0.0,double t1=1.0);
 double     R_Cos_Interp(double a,double b,double t,double t0=0.0,double t1=1.0);
 double     R_Ripple_Interp(double V00,double V10,double t,double V05,double t0=0.0,double t1=0.0);
@@ -50,16 +49,13 @@ Vector<3>  R3_Cyl_Interp(Vector<3> *a,Vector<3> *b,double t,Vector<3> *axis,Vect
 void       SO3_Lin_Interp(Matrix *a,Matrix *b,double t,Matrix *c,double t0=0.0,double t1=1.0);
 
 
-// Nota:
-//  Tutte si basano su Matrici estrinseche provenienti da OpenGl
-//
 void       SE3_Lin_Interp(Matrix *a,Matrix *b,double t,Matrix *c,double t0=0.0,double t1=1.0);
 void       SE3_Cyl_Interp(Matrix *a,Matrix *b,double t,Matrix *c,Vector<3> *axis,Vector<3> *o,double t0=0.0,double t1=1.0);
 void       SE3_2DStabilize_Interp(Matrix *a,Matrix *b,double t,Matrix *c,Vector<3> *axis,Vector<3> *o,double t0=0.0,double t1=1.0);
 
 
 
-// Filtraggio
+// SE3 Filter
 void	   FilterSE3(Matrix **M,int num_elements,int filter_dim,double *weights,double oulier_detection_threshold);		
 																	// 
 																	// filter_dim		 = odd   (min 3)
@@ -69,8 +65,7 @@ void	   FilterSE3(Matrix **M,int num_elements,int filter_dim,double *weights,dou
 																	// oulier_detection  = soglia relativa a sigma (Es: 2.0)
 																	//					 = 0.0    non applica il detector
 																	//
-																	// TODO inserire il filtraggio anche inizio e fine
 
 
-void FilterSO3(Matrix **In,Matrix **Out,int num_elements,int filter_dim,double *weights);  // never tested
-void FilterSO2(double *angles,int num_elements,int filter_dim,double *weights);			   // never tested
+void FilterSO3(Matrix **In,Matrix **Out,int num_elements,int filter_dim,double *weights);
+void FilterSO2(double *angles,int num_elements,int filter_dim,double *weights);

@@ -99,20 +99,3 @@ public:
 
 
 
-
-/*
-GetVoxelList() {
-	OcTree_Node *Get_Next_Enum_Leaf()
-}
-*/
-
-
-
-
-
-	/*const Array<void *> *GetNeighbours(int move_dim,int move_dir);
-	void RecGetNeighbours(int move_dim,int move_dir);
-	void f_edge(int move_dim,int move_dir,double &value,double &d_edge);
-	void F_edge(int move_dim,int move_dir,Vector<dim> &value,double &d_edge);
-	//double Aggiorna_f_fromLeaf();                          // Da fare prima di derivare
-	*/

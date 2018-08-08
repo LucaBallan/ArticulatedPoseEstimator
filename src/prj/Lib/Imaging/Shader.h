@@ -43,7 +43,6 @@ protected:
 																								// assicura il contesto
 public:
 	Shader();
-	//Shader(AdvancedRenderWindow *w,...);														// Shader Specific defined 
 	virtual ~Shader();
 	
 

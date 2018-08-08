@@ -139,7 +139,7 @@ template class DoubleList<Coupled_Face>;
 
 
 
-#include "Math/ExternalEntities.hpp"		// TODO**
+#include "Math/ExternalEntities.hpp"
 
 
 

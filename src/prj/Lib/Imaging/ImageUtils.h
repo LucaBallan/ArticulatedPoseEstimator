@@ -85,15 +85,6 @@ Vector<2> ImageGradient(int x,int y,Bitmap<color_type> *im,color_type color,int 
 
 
 
-///////////////////
-//   Entities	 //
-///////////////////
-/* OBSOLETE
-template <class color_type>
-void DrawPoint(Vector<2> p,color_type color,Bitmap<color_type> *im);
-*/
-
-
 
 
 ///////////////////

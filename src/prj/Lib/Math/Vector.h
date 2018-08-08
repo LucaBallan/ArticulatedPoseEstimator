@@ -55,7 +55,7 @@ public:
 	~Vector() {};
 
 
-	// equality properties
+	// 
 	bool operator== (const Vector<dim> &v) const;
 	bool operator!= (const Vector<dim> &v) const; 
 	bool isEqual    (const Vector<dim> &x,double tollerance=DBL_EPSILON) const;
@@ -72,7 +72,7 @@ public:
 	      Element_Type  Norm2     () const;
 
 
-	// operatori binari
+	// binary operators
 	const Vector<dim>  &operator= (const Vector<dim> &v);
 	const Vector<dim>  &operator= (const Element_Type *c);
 	const Vector<dim>   operator+ (const Vector<dim> &v) const;
@@ -86,11 +86,11 @@ public:
 
 	
 
-	// components change
+	// components
 	      Vector<dim-1> Projection         () const;
 	const Vector<dim>   Projection         (const Vector<dim> &versor) const;
 	const Vector<dim>   PositiveProjection (const Vector<dim> &versor) const;
-	      Vector<dim>   ToCyl              () const;                             // [r,theta,....]  theta e' tra[-pi,+pi]
+	      Vector<dim>   ToCyl              () const;                             // [r,theta,....]  theta is between [-pi,+pi]
 	      Vector<dim>   FromCylToR3        () const;	
 	      Vector<dim>   abs                () const;
 	      Vector<dim>   toInteger          () const;
@@ -98,11 +98,11 @@ public:
 
 
 
-	// operation on the vector
+	// vector operations
 	void  SetZero();
 	void  SetVal(Element_Type x);
 	void  Normalize();
-	void  Random();							// Random vector whose components are between 0.0 - 1.0
+	void  Random();							// Random vector which components are between 0.0 - 1.0
 	void  Min(Vector<dim> *x);				// this = min(this,x)
 	void  Max(Vector<dim> *x);				// this = max(this,x)
 
@@ -118,7 +118,7 @@ public:
 };
 
 
-// Costruttori inlinea
+// Constructors
 Vector<2> VECTOR(Element_Type x,Element_Type y);
 Vector<3> VECTOR(Element_Type x,Element_Type y,Element_Type z);
 
@@ -135,9 +135,9 @@ template <class stream_type,int dim>
 stream_type &operator>>(stream_type &os, Vector<dim> &p);
 
 template <int dim>
-void Multiply(Matrix *A,Vector<dim> b,Element_Type *c);				// c deve avere len = A->r
+void Multiply(Matrix *A,Vector<dim> b,Element_Type *c);				// c must have len = A->r
 
-void Multiply(Matrix *A,Vector<3> *b,Vector<3> *c);					// faster
+void Multiply(Matrix *A,Vector<3> *b,Vector<3> *c);					// fast
 
 
 

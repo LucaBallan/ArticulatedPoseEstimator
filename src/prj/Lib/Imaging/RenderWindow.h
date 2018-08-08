@@ -34,15 +34,6 @@
 
 
 
-// NB: 
-//
-// - ERRORI FREQUENTI:
-//				- Usare Activate(), DeActivate() per accedere all'Opengl
-//
-// - command return true if it has to be redraw
-//
-//
-
 
 #ifdef SYSTEM_WINDOWS
 

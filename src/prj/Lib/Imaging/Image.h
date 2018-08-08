@@ -157,12 +157,6 @@ public:
 	}
 };
 
-/*
-// Conversion
-operator GreyLevel(const ColorRGB &c) {
-	return (GreyLevel)(((int)c.r+(int)c.g+(int)c.b)/3);
-}
-*/
 
 template <class color_type>
 float ToGrey(color_type c);
@@ -213,7 +207,7 @@ public:
 	// Load and Save
 	void Load(char *filename);								// Load an image (BMP,RAW,FLOAT)
 	void Save(char *filename);								// Save the image (BMP,RAW,FLOAT)
-	float SAVE_FLOAT_MIN_VAL,SAVE_FLOAT_MAX_VAL;			// validi solo se si salvano dei float 
+	float SAVE_FLOAT_MIN_VAL,SAVE_FLOAT_MAX_VAL;			// valid only if FLOAT type
 
 
 
@@ -224,7 +218,7 @@ public:
 	void CopyFrom(Bitmap<WI_Type> *src);
 	void CopyFrom(Bitmap<ColorFloat> *src,bool adjust=true,float CLAMP_MIN=-FLT_MAX,float CLAMP_MAX=FLT_MAX);
 	void CopyFromRescale(Bitmap<ColorFloat> *src,float MIN,float MAX,float CLAMP_MIN,float CLAMP_MAX,color_type VAL_MIN,color_type VAL_MAX);
-	void ExtractChannel(int channel,Bitmap<ColorFloat> *dst);		// TODO *** Funziona solo con RGBA!!!!!!!!!!!!
+	void ExtractChannel(int channel,Bitmap<ColorFloat> *dst);		// only for RGBA
 
 
 
@@ -278,8 +272,8 @@ public:
 
 
 	// Boundaries
-	bool isOutside(int x,int y,int lasco=0);				// lasco è usato per le maschere.. Es: 3x3 -> lasco = 1
-	float BorderDistance(int x,int y);						// signed distance from the border (<0 outside). belongs to [0.0,1.0] -> 0.0 means on the border, 1.0 means in the center of the image (max value)
+	bool isOutside(int x,int y,int lasco=0);				
+	float BorderDistance(int x,int y);						
 
 
 	// Operations
@@ -293,8 +287,7 @@ public:
 	void Include(Bitmap<color_type> *img,int x,int y);
 	void Threshold(color_type level);
 	void ThresholdInvert(color_type level);
-	Bitmap<color_type> *AdaptSize(int w,int h);				// Genera una nuova immagine di dimensione w,h 
-															// estendendo o tagliando l'immagine originale
+	Bitmap<color_type> *AdaptSize(int w,int h);				
 
 
 
@@ -370,57 +363,3 @@ typedef Bitmap<GreyLevel> Image;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*	void Clear(BYTE clear);
-
-	Image_Neighbour Neighbour(int x,int y,UINT d);     // d e' il raggio.. sara' 2d
-	
-	void Invert();
-	void AND(Image *b);
-
-
-	Image *GetEdgeImage();
-	void Threshold(int level);
-*/
-
-/*
-
-#define PointWeight(x,y) 1			// o gaussiana
-
-class Image_Neighbour {
-	Image *source;
-	int px,py,d;
-public:
-	Image_Neighbour(Image *source,int px,int py,UINT d);
-
-	// solo per 8 bit
-	double operator*(const Image_Neighbour &b) const;  // normalized cross-correlation 
-	void stat(double &media,double &varianza) const;
-	
-	BYTE Point(int x,int y) const {
-		if ((x<-d) || (x>d)) return 0;
-		if ((y<-d) || (y>d)) return 0;
-		return source->Point(px+x,py+y);
-	}
-};
-
-*/

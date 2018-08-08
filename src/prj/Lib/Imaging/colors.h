@@ -57,24 +57,6 @@ struct HCY_color {
 
 HCY_color RGB2HCY(ColorRGB color);
 ColorRGB RGB2HCY_ub(ColorRGB color);
-//
-// HCY_color RGB2HCY(cv::Vec3b colorBGR);             --> see opencvwrapper.h
-// cv::Vec3b RGB2HCY_ub(cv::Vec3b colorBGR);
-// cv::Vec3w RGB2HCY_us(cv::Vec3b colorBGR);
-//
-
-
-//
-// IMPORTANT:
-// 
-// There is an implementation on the shaders RGBA2HCYA in ImageOperationsRenderer  (it saves in YHHA format)
-//
-
-
-
-
-
-
 
 
 

@@ -34,7 +34,6 @@
 
 
 
-// Tutte ok e testate tranne le TODO
 
 class TensorIndex {
 public:
@@ -121,14 +120,14 @@ public:
 		
 
 
-	// TODO
-		int  getstep(int dim_index) const;	// MULTI_TODO		// dato una coordinata x(0),..,0,..,x(n-1)  dove lo 0 e' piazzato sulla dimensione direction
+	// TO_TEST
+		int  getstep(int dim_index) const;	// MULTI_TO_TEST		// dato una coordinata x(0),..,0,..,x(n-1)  dove lo 0 e' piazzato sulla dimensione direction
 											// gli indici della linea passante per x e parallela a direction
 											// sono coords2index(x)+getstep(direction)*k   k=0,...,dim[direction]-1
 		void subspace_explore(int *s_pos,int missing_dim_index,int &start_index,int &step,int &len) const; // ritorna i parametri per trovare tutti i punti della linea definita da pos e missing_dim_index
-		void setBitmap(void *img);				// (Bitmap<Element_Type> *) TODO
-		void *retrieveBitmap();			// (Bitmap<Element_Type> *) TODO
-	// TODO
+		void setBitmap(void *img);				// (Bitmap<Element_Type> *) TO_TEST
+		void *retrieveBitmap();			// (Bitmap<Element_Type> *) TO_TEST
+	// TO_TEST
 
 
 
@@ -145,33 +144,33 @@ public:
 		void insert(const Tensor<Element_Type> *b,const int i0,...);		// b,v(0),v(1),x,v(3),...,v(n-1)
 		void extract(Tensor<Element_Type> *b,const int i0,...) const;		// x=variable(index of b) 
 																							// Es: A.insert(&B,3,Tensor<double>::variabile(1),Tensor<double>::variabile(0));
-																							// TODO .. extract e extract_v non l'ho testato ma dovrebbe funzionare
+																							// TO_TEST .. extract e extract_v non l'ho testato ma dovrebbe funzionare
 
 		// Direct Output
-		Tensor<Element_Type> *extract(const int i0,...) const;// TODO
-		Tensor<Element_Type> *resize() const;// TODO
+		Tensor<Element_Type> *extract(const int i0,...) const;// TO_TEST
+		Tensor<Element_Type> *resize() const;// TO_TEST
 
 
 
 
 
 	// Similar to a reshape
-	const Tensor<Element_Type> &operator=(const Tensor &b);	// TODO
+	const Tensor<Element_Type> &operator=(const Tensor &b);	// TO_TEST
 
 	
 	// Operations
-	const Tensor<Element_Type> &operator+=(const Tensor<Element_Type> &b);// TODO
-	const Tensor<Element_Type> &operator-=(const Tensor<Element_Type> &b);// TODO
-	const Tensor<Element_Type> operator+(const Tensor<Element_Type> &b) const;// TODO
-	const Tensor<Element_Type> operator-(const Tensor<Element_Type> &b) const;// TODO
-	const Tensor<Element_Type> &operator*=(const Element_Type &b);// TODO
-	const Tensor<Element_Type> operator*(const Element_Type &b) const;// TODO
+	const Tensor<Element_Type> &operator+=(const Tensor<Element_Type> &b);// TO_TEST
+	const Tensor<Element_Type> &operator-=(const Tensor<Element_Type> &b);// TO_TEST
+	const Tensor<Element_Type> operator+(const Tensor<Element_Type> &b) const;// TO_TEST
+	const Tensor<Element_Type> operator-(const Tensor<Element_Type> &b) const;// TO_TEST
+	const Tensor<Element_Type> &operator*=(const Element_Type &b);// TO_TEST
+	const Tensor<Element_Type> operator*(const Element_Type &b) const;// TO_TEST
 
 
 	void Diagonal(Element_Type empty,Element_Type x0,...);					// 0, x0, x1, .., x(dim[0]-1)
 
 
-	void DWT(int dimension_index,Tensor<Element_Type> *&l,Tensor<Element_Type> *&h) const;	// TODO
+	void DWT(int dimension_index,Tensor<Element_Type> *&l,Tensor<Element_Type> *&h) const;	// TO_TEST
 	void iDWT(int dimension_index,Tensor<Element_Type> *l,Tensor<Element_Type> *h);
 
 	Tensor<Element_Type> **DWT();

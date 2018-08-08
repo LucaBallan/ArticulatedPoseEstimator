@@ -117,14 +117,6 @@ void SetAlphaChannel(Bitmap<GreyLevel> *alpha,Bitmap<ColorRGBA> *dst) {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-// 
-//  Converte Float -> RGB
-//		Scala src da (Min_,Max_) a (0 - 255)
-//			Tutti i dati fuori (Min_,Max_) vengono colorati di rosso o verde
-//
-//      Se (Min_,Max_) non vengono specificati -> li detecta automaticamente
-//			considerando invalidi i dati fuori da (CLAMP_MIN,CLAMP_MAX) di default = (-FLT_MAX,+FLT_MAX)
-//
 
 ColorRGB *FloattoRGB_Clamped(float *Img,int width,int height,float CLAMP_MIN=-FLT_MAX,float CLAMP_MAX=FLT_MAX,float Min_=FLT_MAX,float Max_=-FLT_MAX) {
 	ColorRGB *nBuf=new ColorRGB[width*height];

@@ -190,9 +190,6 @@ void TextelRenderer::DrawTextel(Triangle<typename TPoint2D<int>> *D,Triangle<flo
 		
 		for(count=sx;count<=ex;count++) {
 			getVC(g,edge_lvc[i],edge_rvc[i]);
-			
-			// Il punto corrente e' (count,i)
-			// Il suo valore e'     (g,vc)
 			PixelShader(count,i,vc);
 
 			g+=mg;

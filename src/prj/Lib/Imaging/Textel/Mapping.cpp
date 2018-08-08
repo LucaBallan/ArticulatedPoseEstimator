@@ -36,7 +36,7 @@
 
 #include "lib.h"
 #include "TextelRenderer.hpp"
-//#include "OpenGLTextel.hpp"
+
 
 
 
@@ -188,74 +188,4 @@ inline void RGBTextelRenderer::FlatShader(int x,int y,float *vc) {
 
 
 
-
-/*
-
-template <class data_type>
-class DataTextelRenderer : public TextelRenderer {
-	Triangle<float *> Vect;
-
-public:
-	Bitmap<data_type> *Out;
-	Bitmap<float>    *ZBuffer;
-	
-	bool WriteOut;
-	bool WriteZBuffer;
-	bool TestZBuffer;
-
-
-	RGBTextelRenderer(int width,int height);
-	~RGBTextelRenderer();
-
-	void DrawTextel(Triangle<typename TPoint2D<int>> *D,Triangle<float> *z,Triangle<typename TPoint2D<float>> *UV);
-};
-
-
-template <class data_type>
-void DataTextelRendererPixelShader<data_type>(int x,int y,float *vc) {
-	// vc[0]=z
-	// vc[1]=value
-
-}
-
-
-
-
-template <class data_type>
-DataTextelRenderer<data_type>::DataTextelRenderer(int width,int height) : TextelRenderer(width,height,2) {
-	Out=NULL;
-	ZBuffer=NULL;
-	
-	WriteZBuffer=true;
-	TestZBuffer=true;
-	WriteOut=true;
-
-	Vect.Point[0]=new float[2];
-	Vect.Point[1]=new float[2];
-	Vect.Point[2]=new float[2];
-	
-	PixelShader=DataTextelRendererPixelShader<data_type>;
-}
-
-template <class data_type>
-DataTextelRenderer<data_type>::~DataTextelRenderer() {
-	delete []Vect.Point[0];
-	delete []Vect.Point[1];
-	delete []Vect.Point[2];
-}
-
-template <class data_type>
-void DataTextelRenderer<data_type>::DrawTextel(Triangle<typename TPoint2D<int>> *D,Triangle<float> *z,Triangle<float> *Value) {
-	WorkingOn=this;
-	
-	Vect.Point[0][0]=z->Point[0];
-	Vect.Point[0][1]=Value->Point[0];
-	Vect.Point[1][0]=z->Point[1];
-	Vect.Point[1][1]=Value->Point[1];
-	Vect.Point[2][0]=z->Point[2];
-	Vect.Point[2][1]=Value->Point[2];
-
-	TextelRenderer::DrawTextel(D,&Vect);
-}
-*/
 
