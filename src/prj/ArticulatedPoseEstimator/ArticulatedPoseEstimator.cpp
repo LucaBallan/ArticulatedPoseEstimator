@@ -36,36 +36,18 @@
 
 
 //
-// Mask
-//   Oggetto bianco su sfondo nero
-//
-// Depth 
-//   float file 
-//   z in camera space
-//   FLT_MAX indicate missing object or missing information
-//   Oggetti non modellati dal sistema non devono apparire nella depth (IMPORTANTE)
-//   Mask==0 -> Depth=FLT_MAX 
-//
-//
-// TODO					- Minor problem
-// TODOSS				- punti da velocizzare
-// TODOLUCA				- to do important       (lavoro corrente)
-// TODOLUCA**			- to do very important  (lavoro corrente)
-// TODOAPPROX			- Approximation, not general solutions
-// TODOCHECKS			- Controlli per casi speciali non implementati
+// TODO				- Minor problem
+// TODOSS			- to speed up
+// TODOLUCA			- to do important
+// TODOLUCA**			- to do very important
+// TODOAPPROX			- approximation, not a general solution
+// TODOCHECKS			- special cases
 // TODODEBUG	
 // TODOEDGE
 // TODOSTOCASTIC
 // TODOTEXTURE
-// DEPRECATED			- funzioni da cancellare
-//
-//
-//
-//	finger_data.txt -A 1 2 -P 20 10 0.1 -C 3 -Z 0.0 -M 1.3 -K limits_finger.txt -E 30 0 0.5 -B 300 -J 9 6 0.04 -E 30 0 0.5 -B 300 -J 9 6 0.04 -K limits_hand.txt
+// DEPRECATED
 //	
-//	Per velocizzare:
-//		- Computa normals (skinned update??)
-//		- SoftRendering
 //
 
 
@@ -95,14 +77,14 @@ using namespace std;
 
 //////////// DEFINES ///////////////
 
-int LEN_MAX=100;							// Se ho una distanza di 4 frame è ok 40
-double SOGLIA_TOLLERANZA_GRADIENTE=0.0;		// 0   passano anche i perpendicolari 
-											// 0.8 taglia quelli > 45°
-											// 1.0 passano solo i paralleli
+int LEN_MAX=100;				
+double SOGLIA_TOLLERANZA_GRADIENTE=0.0;		// 0   only ortogonal
+						// 0.8 cut > 45Â°
+						// 1.0 only parallel
 double SOGLIA_SMOOTH=2.0;
 #define DEFALUT_L0_ITERATIONS  20
 #define DEFALUT_L1_ITERATIONS  10
-#define N_ITER_FIND_OUTLIERS   0			 // 2 or 5
+#define N_ITER_FIND_OUTLIERS   0	 	// 2 or 5
 #define OUTLIERS_THRESH        7
 #define DEFALUT_PROXIMITY_F    0.1
 #define ROOM_MULTIPLIER        2
@@ -348,9 +330,6 @@ int main(int argc,char* argv[]) {
 	// -----------------------
 	cout<<"Correct Biped:\n";
 	CorrectBiped(Model->BoneRoot);
-		//SetMiddle_Spine("Spine1");
-		//SetOnlyPelvis(Contraint_Table);
-		//SetOnlyPelvis(Contraint_Table_L1);
 	cout<<"\n";
 
 
