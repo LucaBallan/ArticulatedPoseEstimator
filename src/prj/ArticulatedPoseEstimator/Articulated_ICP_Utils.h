@@ -44,7 +44,7 @@ inline bool Nearest_Bkg_Pixel(Bitmap<GreyLevel> *Rendered,int x,int y) {
 
 	// non controlla il vertice al centro perche' dovrebbe essere pieno 255 
 	// controlla se i suoi vicini sono background per definirlo border
-	// occhio al concetto dei bordi netti!!! 3dMax mettere !=255 Ë diverso da ==0
+	// occhio al concetto dei bordi netti!!! 3dMax mettere !=255 √® diverso da ==0
 
 	if (*(c_p+1)==0) return true;
 	if (*(c_p-1)==0) return true;
@@ -387,185 +387,6 @@ void Articulated_ICP::PrepareFrameForSilhouetteResidual() {
 
 
 
-/*
-// TODOAPPROX
-void Articulated_ICP::ComputeGlobalResiduals(double *residuals,double *n_observations) {
-	int used_views[3];
-	for(int i=0;i<3;i++) used_views[i]=0;
-
-	for(int i=0;i<5;i++) {
-		residuals[i]=0.0;
-		n_observations[i]=0.0;
-	}
-	for(int i=0;i<num_views;i++) {
-		ResetBufferStatus();
-		
-		if (SilhouetteResidual(i,residuals[0],n_observations[0])) used_views[0]++;
-		if (DepthResidual     (i,residuals[1],n_observations[1])) used_views[1]++;
-		if (TextureResidual   (i,residuals[2],n_observations[2])) used_views[2]++;
-	}
-
-	OpticalFlowResidual         (residuals[3],n_observations[3]);
-	CollisionResidual           (residuals[4],n_observations[4]);
-
-
-	for(int i=0;i<3;i++) 
-		if (used_views[i]!=0) residuals[i]/=used_views[i];
-
-}
-
-bool Articulated_ICP::TextureResidual(double &residual, double &n_observations) {
-	int tmp_n_observations;
-
-
-	if ((Views[i].Img!=NULL) && (Views[i].Mask!=NULL)) {
-		RenderTextureImage(i); // Same rules here!!!
-
-		#ifdef AICP_USE_L2_INSTEAD
-		residual+=INTERNAL_AICP_SSD_RGBA(TextureImage,Views[i].Img,Views[i].Mask,tmp_n_observations);
-		#else
-		residual+=INTERNAL_AICP_SAD_RGBA(TextureImage,Views[i].Img,Views[i].Mask,tmp_n_observations);
-		#endif
-		
-		n_observations+=(double)tmp_n_observations;
-		
-		return true;
-	}
-
-	return false;
-}
-
-*/
-
-
-/*
-void Articulated_ICP::SilhouetteEdgesSalientPointsResidual(double &residual_SE,double &residual_P,double *n_observations_SE,double *n_observations_P) {
-	int tmp_n_observations;
-
-	int used_views=0;
-	double distance=0.0;
-	(*n_observations)=0.0;
-	for(int i=0;i<num_views;i++) {
-		if (Views[i].Mask!=NULL) {
-			if ((EdgesSource&0x1) && (Views[i].Edges!=NULL) && (c_v->Enable&VIEW_ENABLE_SILHOUETTE)) {
-				
-				// TODOLUCA salient anche se solo silhouette
-
-				// TODOLUCA
-				//double Residual_S=0.0,
-				//	   Residual_E=0.0,
-				//	   Residual_P=0.0,
-				//	   Residual_O=0.0;
-				//int    n_observations_S=0,
-				//	   n_observations_E=0,
-				//	   n_observations_P=0,
-				//	   n_observations_O=0;
-				//bool tmp_sdi=show_debug_information;
-				//show_debug_information=false;
-				//{
-				//	TargetList_2D->clear();
-				//	ResetBufferStatus();
-				//	GetEdgesCorrespondences(i,int Level);
-				//	GetSalientPointCorrespondences(i,int Level,int frame_index);
-				//	SilhouetteEdgesSalientPointsOpticalFlow_CorrespondencesResidual(Residual_S,Residual_E,Residual_P,Residual_O,&n_observations_S,&n_observations_E,&n_observations_P,&n_observations_O);
-				//	// n_observations_S = 0 (sempre)
-				//	// n_observations_O = 0 (sempre)
-				//}
-				//show_debug_information=tmp_sdi;
-				
-					
-				// TODOLUCA
-
-
-				
-				// Edges + Silhouettes
-				ResetBufferStatus();					 // TODOSS All these can be speeded up!!!!
-				RenderSilhouetteImage(i);
-				RenderDepthImage(i);
-				RenderEdgesImage(i);
-				
-				// Actual rendered edges (internal or external)
-				Bitmap<GreyLevel> Rendered(EdgesImage->width,EdgesImage->height);
-				for(int y=0;y<EdgesImage->height;y++) {
-					for(int x=0;x<EdgesImage->width;x++) {
-						if (EdgesImage->Point_NCB(x,y)>buffer_status.edge_threshold_r) Rendered.SetPoint(x,y,0);
-						else Rendered.SetPoint(x,y,255);
-					}
-				}
-
-				// True Edges (discard the one outside the mask) can be done as pre processing TODOSS
-				int win_d_for_input_mask=max((GRADIENT_WINDOW_SIZE-1)>>1,edge_mask_max_distance);
-				Bitmap<GreyLevel> *c_m=Views[i].Mask;
-				Bitmap<GreyLevel> *c_e=Views[i].Edges;
-				Bitmap<GreyLevel> Source(EdgesImage->width,EdgesImage->height);
-				
-				for(int y=0;y<EdgesImage->height;y++) {
-					for(int x=0;x<EdgesImage->width;x++) {
-						if (c_e->Point_NCB(x,y)>input_edges_images_edge_threshold) {
-							int Rx,Ry;
-							if (!(c_e->isOutside(x,y,win_d_for_input_mask))) {
-								if (GetCloserPointZero_NCB(x,y,c_m,Rx,Ry,win_d_for_input_mask)) Source.SetPoint(x,y,0);
-								else Source.SetPoint(x,y,255);
-							} else Source.SetPoint(x,y,255);
-						} else Source.SetPoint(x,y,255);
-					}
-				}
-
-				// TODOLUCA 
-				Source.Save("ImSource.jpg");
-				Rendered.Save("ImDest.jpg");
-
-				// TODOLUCA funziona sta cosa?
-				DistanceTransform_Buffers[i]->PrepareImageA(&Source,false,-1);   // TODOEDGE Skrew up everything
-				DistanceTransform_Buffers[i]->PrepareImageB(&Rendered,false,-1); // TODOEDGE
-
-				cvSaveImage("ImSourceD.jpg",DistanceTransform_Buffers[i]->iia);
-				cvSaveImage("ImDestD.jpg",DistanceTransform_Buffers[i]->iib);
-
-				#ifdef AICP_USE_L2_INSTEAD
-				distance+=SilhouetteDistanceMT_mse(DistanceTransform_Buffers[i],&tmp_n_observations);
-				#else
-				distance+=SilhouetteDistanceMT(DistanceTransform_Buffers[i],&tmp_n_observations);
-				#endif
-
-				
-				//cout<<distance<<"\n";
-				(*n_observations)+=(double)tmp_n_observations;
-				
-				//// Edges contano 30 volte di piu'
-				//DistanceTransform_Buffers[i]->PrepareImageA(Views[i].Mask,false,-1);  // Skrew up everything
-				//DistanceTransform_Buffers[i]->PrepareImageB(SilhouetteImage,true,128);
-
-				//#ifdef AICP_USE_L2_INSTEAD
-				//distance+=SilhouetteDistanceMT_mse(DistanceTransform_Buffers[i],&tmp_n_observations);
-				//#else
-				//distance+=SilhouetteDistanceMT(DistanceTransform_Buffers[i],&tmp_n_observations);
-				//#endif
-				//
-				//cout<<distance;
-				//(*n_observations)+=(double)tmp_n_observations;
-				used_views++;
-
-			} else {
-				// Silhouettes
-				ResetBufferStatus();
-				RenderSilhouetteImage(i);
-
-				DistanceTransform_Buffers[i]->PrepareImageB(SilhouetteImage,true,128);
-				#ifdef AICP_USE_L2_INSTEAD
-				distance+=SilhouetteDistanceMT_mse(DistanceTransform_Buffers[i],&tmp_n_observations);
-				#else
-				distance+=SilhouetteDistanceMT(DistanceTransform_Buffers[i],&tmp_n_observations);
-				#endif
-				(*n_observations)+=(double)tmp_n_observations;
-				used_views++;
-			}
-		}
-	}
-	if (used_views!=0) return (distance/used_views);
-	else return 0.0;
-}
-*/
 
 
 
@@ -864,8 +685,8 @@ double Articulated_ICP::ComputaTextureResidual(double *n_observations) {
 
 void Articulated_ICP::Clean_TargetList_2D_FromOutliers(int first_element_to_check) {
 	// Elimina Spostamenti troppo alti -> occhio devo farlo con gli altri...
-	// Posso usare lo z-buffer per vedere se Ë ostruito da un'altro oggetto...
-	// TODO: eliminare le forze la cui entit‡ Ë molto alta rispetto alle altre del bone a cui sono associate.. (rispetto alla singola vista)
+	// Posso usare lo z-buffer per vedere se √® ostruito da un'altro oggetto...
+	// TODO: eliminare le forze la cui entit√† √® molto alta rispetto alle altre del bone a cui sono associate.. (rispetto alla singola vista)
 
 	//
 	// Calcola la media degli spostamenti
@@ -911,7 +732,7 @@ void Articulated_ICP::Clean_TargetList_2D_FromOutliers(int first_element_to_chec
 	}
 
 
-	// Impone che gli spostamenti di entit‡ elevata rispetto alla
+	// Impone che gli spostamenti di entit√† elevata rispetto alla
 	// media e alla soglia SMOOTH_MOVEMENT siano esclusi,
 	// ritenuti outliers.
 	for(int i=first_element_to_check;i<TargetList_2D->numElements();i++) {
