@@ -115,7 +115,7 @@ IKSolver::IKSolver(Skinned_Mesh *mesh,Vector<3> VolumeCenter,double VolumeRadius
 	// LastComputedResidual
 	LastComputedResidual=DBL_MAX;
 
-	// I gradi di libertà sono tutti dell'ordine di -M_PI a +M_PI (anche quelli di traslazione)
+	// I gradi di libertÃ  sono tutti dell'ordine di -M_PI a +M_PI (anche quelli di traslazione)
 		
 	InitRigidDerivates();
 	Init_Freedom_Degrees();
@@ -438,9 +438,6 @@ void IKSolver::Add_Contact_Points(Array<TargetList_3D_Item_type> *TargetList_3D_
 			}
 		}
 
-		//if (cur_min>***) { // TODOLUCA
-		//}
-
 		TargetList_3D_Item_type x;
 		x.sqrt_weight=sqrt_weight*((float)Area[a->Point[min_a]]);
 		x.VertexIndex=a->Point[min_a];
@@ -453,7 +450,7 @@ void IKSolver::Add_Contact_Points(Array<TargetList_3D_Item_type> *TargetList_3D_
 			x.ttl=Uniform_int_rand(max(ttl-delta_ttl,0),ttl+delta_ttl);
 		} else x.ttl=ttl;
 
-		// Check duplicates TODOAAA (forse e' meglio tenerli?) TODOAAA not tested yet
+		// Check duplicates 
 		int duplicate_index=TargetList_3D_ContactPoints->search(compare_TargetList_3D_Item_type,&x);
 		if (duplicate_index==-1) {
 			TargetList_3D_ContactPoints->append(x);
@@ -660,7 +657,6 @@ void IKSolver::Collision_Increase_Time() {
 
 	int old_num=collision_constraint_list->numElements();
 
-	// TODO*** eliminare solo se soddisfatti?
 	for(int i=0;i<collision_constraint_list->numElements();i++) {
 		if ((--((*(collision_constraint_list))[i].ttl))==0) {
 			collision_constraint_list->del(i);
@@ -1383,14 +1379,14 @@ bool IKSolver::Perspective_Solve_LM(int frame_index,
 		if (show_minimal_debug_information) cout<<"   LM  "<<info[0]<<"  ->  "<<info[1]<<"\n";
 	}
 
-	// Controlla la validità del risultato
+	// Controlla la validitÃ  del risultato
 	bool valid_result=true;
 	//if (info[6]==2) valid_result=false;
 
 	double norm_diff_sol=0.0;
 	for(int i=0;i<num_Freedom_Degrees;i++) norm_diff_sol+=fabs(Solution[i]-Old_Solution[i]);
 	norm_diff_sol/=num_Freedom_Degrees;
-	if (norm_diff_sol>M_PI*30/180) valid_result=false;		// TODO: sopra i 30° salta!!!
+	if (norm_diff_sol>M_PI*30/180) valid_result=false;		// TODO: sopra i 30Â° salta!!!
 	if (show_debug_information) cout<<"     pose space movement "<<norm_diff_sol<<"\n";
 		
 	// Salva risultato
@@ -1558,226 +1554,4 @@ Vector<3> conic_f::DF(Vector<3> x,Vector<3> o,Vector<3> d,double r) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-inline double Raised_Cos(double x,double sigma) {
-	if (x<-sigma) return  (-x+(1-sigma));
-	if (x>sigma) return   0.0;
-
-	return ((-0.5*(1-cos(((x+sigma)/(2*sigma))*M_PI)))+1.0);
-}
-
-inline double D_Raised_Cos(double x,double sigma) {
-	if (x<-sigma) return -1.0;
-	if (x>sigma) return   0.0;
-	return (-(M_PI/(4.0*sigma))*sin((x+sigma)*M_PI/(2.0*sigma)));
-}
-
-
-
-double *Solution_w=NULL;
-double *Calcolated_w=NULL;
-bool *Valid_w=NULL;
-
-
-bool IKSolver::Perspective_Solve_ALPHA_WEIGHTS(int frame_index,Array<TargetList_2D_Item_type_Frame_Info> *TargetList_2D,int Num_of_Iteration,double Solution_Proximity,double Stop_Error_Th) {
-	int num_2D_observations=TargetList_2D->numElements();
-	cout<<"-> Starting AW with "<<num_2D_observations<<" elements --\n";
-
-	if (!Calcolated_w) {
-		Calcolated_w=new double[mesh->num_p*mesh->num_bones];
-		Valid_w=new bool[mesh->num_p*mesh->num_bones];
-		Solution_w=new double[mesh->num_p*mesh->num_bones];
-	}
-	double *Old_Solution=new double[mesh->num_p*mesh->num_bones];
-
-	// Init
-	times_upd=0;
-	double *B=new double[2*num_2D_observations];
-	Temp_TargetList_FI=TargetList_2D;
-	Zero_Anomalies=0;
-	Tot_Calculations=0;
-	
-
-	// Set up starting point
-	read_weights(mesh,Solution_w);
-	for(int i=0;i<(mesh->num_p*mesh->num_bones);i++) {
-		Calcolated_w[i]=Solution_w[i];
-		Old_Solution[i]=Solution_w[i];
-	}
-
-
-	// Computa Measurament Vector (B)
-	int current_frame=-1;
-	for(int i=0;i<num_2D_observations;i++) {
-		if ((*TargetList_2D)[i].frame!=current_frame) {
-			current_frame=(*TargetList_2D)[i].frame;
-			mesh->Apply_Skin(current_frame);
-		}
-
-		// Get Point
-		int point_index=(*TargetList_2D)[i].VertexIndex;
-		double Target_Weight=mesh->AreaPoint[point_index];
-		if ((*TargetList_2D)[i].Weighted) Target_Weight*=added_sqrt_weight;
-
-		// Set Obbiettivo
-		B[i*2]=Target_Weight*(*TargetList_2D)[i].Target[0];
-		B[i*2+1]=Target_Weight*(*TargetList_2D)[i].Target[1];
-	}
-
-	
-
-
-	// Non-Linear Least Square
-	double opts[4];
-	double info[9];
-	cout<<"   Solution_Proximity "<<Solution_Proximity<<"\n";
-	opts[0]=Solution_Proximity; 
-	opts[1]=1e-20; 
-	opts[2]=1e-20; 
-	opts[3]=Stop_Error_Th;
-	
-	#define LM_DER_WORKSZ(npar, nmeas) (2*(nmeas) + 4*(npar) + (nmeas)*(npar) + (npar)*(npar))
-	LM_Mem_Storage=new double[2*LM_DER_WORKSZ(mesh->num_p*mesh->num_bones,2*num_2D_observations)];
-
-	
-	//int ret=dlevmar_der(IKSolver::LM_Function,IKSolver::LM_Jacobian,Solution,B,num_Freedom_Degrees,2*num_2D_observations,Num_of_Iteration,opts,info,LM_Mem_Storage,NULL,this); 
-	int ret=dlevmar_bc_der(LM_Function_WEIGHTS,IKSolver::LM_Jacobian,Solution_w,B,num_Freedom_Degrees,2*num_2D_observations,lowerBound,upperBound,Num_of_Iteration,opts,info,LM_Mem_Storage,NULL,this); 
-	
-
-	cout<<"   Zero_Anomalies "<<Zero_Anomalies<<" on "<<Tot_Calculations<<" ("<<((100.0*Zero_Anomalies)/Tot_Calculations)<<"%)\n";
-	cout<<"   ret "<<ret<<"\n";
-	cout<<"   Initial e2 "<<info[0]<<"\n";
-	cout<<"   e2 "<<info[1]<<"\n";
-	cout<<"   JT "<<info[2]<<"\n";
-	cout<<"   DP "<<info[3]<<"\n";
-	cout<<"   mu "<<info[4]<<"\n";
-	cout<<"   Done "<<info[5]<<" iterations\n";
-	cout<<"   Call J "<<info[8]<<" times\n";
-	cout<<"   Call F "<<info[7]<<" times\n";
-	cout<<"   Updated "<<times_upd<<" times\n";
-	cout<<"   Terminated because "<<LM_ERRORS[((int)info[6])-1]<<".\n";
-
-
-////////////////////////////////////////////////////////////////////////////////
-	// Controlla la validità del risultato
-	bool valid_result=true;
-
-
-		
-	// Salva risultato
-	if (valid_result) set_weights(mesh,Solution_w);
-	else {set_weights(mesh,Old_Solution);cout<<"Operation cancelled.\n";Beep(750,300);}
-	mesh->Apply_Skin(frame_index);
-	mesh->ComputaNormals();
-	
-
-	delete LM_Mem_Storage;
-	delete Old_Solution;
-	delete B;
-	return true;
-}
-
-
-void generate_assignement(Skinned_Mesh *m,double *p) {
-	Array<ordered_pair> *o=new Array<ordered_pair>();
-	
-	for(int j=0;j<m->num_p;j++) {
-		
-	}
-
-}
-
-
-void read_weights(Skinned_Mesh *m,double *p) {
-	for(int i=0;i<m->num_bones;i++) {
-		for(int j=0;j<m->num_p;j++) {
-			p[(i*(m->num_p))+j]=m->Weigth[j][i];
-		}
-	}
-
-	
-}
-
-void set_weights(Skinned_Mesh *m,double *p) {
-	for(int i=0;i<m->num_bones;i++) {
-		for(int j=0;j<m->num_p;j++) {
-			m->Weigth[j][i]=p[(i*(m->num_p))+j];
-		}
-	}
-}
-
-
-void IKSolver::LM_Function_WEIGHTS(double *p,double *x,int m,int n,void *data) {
-	IKSolver *IK_OBJ=static_cast<IKSolver *>(data);
-	int num_elements=IK_OBJ->Temp_TargetList_2D->numElements();
-	Array<TargetList_2D_Item_type_Frame_Info> *TargetList_=IK_OBJ->Temp_TargetList_2D;
-	List<HyperMesh<3>::PointType> *Points=&(IK_OBJ->mesh->Points);
-	List<double> *AreaPoint=&(IK_OBJ->mesh->AreaPoint);
-
-	// Update WEIGHTS
-	set_weights(IK_OBJ->mesh,p);
-
-
-	// Computa x
-	Vector<3> tmp_p;
-	Vector<2> PP2;
-
-	int current_frame=-1;
-	for(int i=0;i<numElements;i++) {
-		if ((*TargetList_)[i].frame!=current_frame) {
-			current_frame=(*TargetList_)[i].frame;
-			IK_OBJ->mesh->Apply_Skin(current_frame);
-		}
-		
-		int point_index=(*TargetList_)[i].VertexIndex;
-		tmp_p=(*Points)[point_index];
-		double Target_Weight=(*AreaPoint)[point_index];
-		PP2=(*TargetList_)[i].View->Projection(tmp_p); 
-		if ((*TargetList_)[i].Weighted) Target_Weight*=IK_OBJ->added_sqrt_weight;
-
-		*(x++)=Target_Weight*PP2[0];
-		*(x++)=Target_Weight*PP2[1];
-	}
-
-}
-
-
-*/
 
