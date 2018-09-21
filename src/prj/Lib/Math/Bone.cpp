@@ -803,9 +803,6 @@ void Bone::ApplyConstraints(int FrameIndex) {
 		RelativeTrasformationMatrix[FrameIndex]->Set(&Actual_Rotation);
 	}
 
-	// TODOLUCA: Check spatial contraints!!! Tabc
-	
-
 #endif
 }
 
@@ -996,7 +993,7 @@ bool Bone::Filter_Fnc(Tree *x,void *In,void *Out) {
 	//
 	// Filter using SLERP
 	//
-		////////////////////////// CONTROLLO OUTLIERS PROBLEMI DI ANGLE AXIS ///////////////// TODOLUCA
+		////////////////////////// CHECK for OUTLIERS and ANGLE AXIS problems /////////////////
 		for(int i=-Filter_Extension;i<=Filter_Extension;i++) {
 			int use_i=FrameIndex+i;
 			if (use_i<1) continue;
